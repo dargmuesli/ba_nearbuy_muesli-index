@@ -3,9 +3,5 @@
 @tailwind utilities;
 
 nb-button::part(nb-button) {
-  background-color: var(--color-primary, rgb(59, 130, 246));
-}
-
-nb-button::part(nb-button):hover {
-  background-color: gray;
+  font-weight: normal;
 }

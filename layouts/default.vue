@@ -31,15 +31,9 @@
     <footer class="text-center">
       <p>
         {{ $t('theme') }}
-        <input id="nearbuy" name="color" type="radio" value="nearbuy" />
+        <input id="nearbuy" checked name="color" type="radio" value="nearbuy" />
         <label for="nearbuy">{{ $t('nearbuy') }}</label>
-        <input
-          id="muesliIndex"
-          checked
-          name="color"
-          type="radio"
-          value="muesliIndex"
-        />
+        <input id="muesliIndex" name="color" type="radio" value="muesliIndex" />
         <label for="muesliIndex">{{ $t('muesliIndex') }}</label>
       </p>
       <a href="https://thenounproject.com/search/?q=muesli&i=1505906">
@@ -63,11 +57,16 @@ export default defineComponent({
     for (let i = 0; i < radios.length; i++) {
       radios[i].addEventListener('change', function (event: InputEvent) {
         if ((event.target as HTMLInputElement).value === 'nearbuy') {
-          document.body.style.setProperty('--color-primary', '#92BE9B')
+          document.body.style.removeProperty('--primary-color')
+          document.body.style.removeProperty('--primary-color-dark')
         } else if ((event.target as HTMLInputElement).value === 'muesliIndex') {
           document.body.style.setProperty(
-            '--color-primary',
+            '--primary-color',
             'rgb(59, 130, 246)'
+          )
+          document.body.style.setProperty(
+            '--primary-color-dark',
+            'rgb(37, 99, 235)'
           )
         }
       } as EventListener)
