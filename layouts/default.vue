@@ -59,6 +59,7 @@ export default defineComponent({
         if ((event.target as HTMLInputElement).value === 'nearbuy') {
           document.body.style.removeProperty('--primary-color')
           document.body.style.removeProperty('--primary-color-dark')
+          document.body.classList.remove('theme-muesli-index')
         } else if ((event.target as HTMLInputElement).value === 'muesliIndex') {
           document.body.style.setProperty(
             '--primary-color',
@@ -68,6 +69,7 @@ export default defineComponent({
             '--primary-color-dark',
             'rgb(37, 99, 235)'
           )
+          document.body.classList.add('theme-muesli-index')
         }
       } as EventListener)
     }

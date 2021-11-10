@@ -5,3 +5,7 @@
 nb-button::part(nb-button) {
   font-weight: normal;
 }
+
+body.theme-muesli-index nb-button::part(nb-button) {
+  @apply normal-case;
+}
