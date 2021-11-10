@@ -25,7 +25,19 @@ export default {
   buildModules: [
     '@nuxt/typescript-build',
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/html-validator',
+    [
+      '@nuxtjs/html-validator',
+      {
+        options: {
+          elements: [
+            'html5',
+            {
+              'nb-button': { flow: true },
+            },
+          ],
+        },
+      },
+    ],
     '@nuxtjs/stylelint-module',
     '@nuxtjs/tailwindcss',
   ],
