@@ -29,6 +29,19 @@
       </div>
     </main>
     <footer class="text-center">
+      <p>
+        {{ $t('theme') }}
+        <input id="nearbuy" name="color" type="radio" value="nearbuy" />
+        <label for="nearbuy">{{ $t('nearbuy') }}</label>
+        <input
+          id="muesliIndex"
+          checked
+          name="color"
+          type="radio"
+          value="muesliIndex"
+        />
+        <label for="muesliIndex">{{ $t('muesliIndex') }}</label>
+      </p>
       <a href="https://thenounproject.com/search/?q=muesli&i=1505906">
         {{ $t('iconCredits') }}
       </a>
@@ -45,6 +58,20 @@ export default defineComponent({
   },
   mounted() {
     // console.log(this.$auth.strategy.token.get())
+    const radios = document.querySelectorAll('input[type=radio]')
+
+    for (let i = 0; i < radios.length; i++) {
+      radios[i].addEventListener('change', function (event: InputEvent) {
+        if ((event.target as HTMLInputElement).value === 'nearbuy') {
+          document.body.style.setProperty('--color-primary', '#92BE9B')
+        } else if ((event.target as HTMLInputElement).value === 'muesliIndex') {
+          document.body.style.setProperty(
+            '--color-primary',
+            'rgb(59, 130, 246)'
+          )
+        }
+      } as EventListener)
+    }
   },
 })
 </script>
@@ -55,9 +82,15 @@ de:
   heading: 'Nearbuy: Muesli Index'
   hello: Hallo {name}! ({permission})
   iconCredits: Icon "Muesli" von Marina Rico über the Noun Project
+  muesliIndex: Muesli Index
+  nearbuy: Nearbuy
+  theme: 'Thema:'
 en:
   error: 'Error: {error}'
   heading: 'Nearbuy: Muesli Index'
   hello: Hello {name}! ({permission})
   iconCredits: Icon "Muesli" by Marina Rico from the Noun Project
+  muesliIndex: Muesli Index
+  nearbuy: Nearbuy
+  theme: 'Theme:'
 </i18n>
