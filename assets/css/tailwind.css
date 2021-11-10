@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  --main-bg-color: brown;
+}
+
+nb-button::part(nb-button) {
+  background-color: rgb(59, 130, 246);
+}
+
+nb-button::part(nb-button):hover {
+  background-color: rgb(37, 99, 235);
+}

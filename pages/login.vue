@@ -1,23 +1,15 @@
 <template>
   <div class="flex flex-col items-center space-y-2">
-    <my-component
-      :first-last.prop="{ first: 'Jonas', last: 'Thelemann' }"
-      @firstLastE="firstLast"
-    />
-    <button
-      class="bg-green-600 font-bold px-4 py-2 rounded text-white text-xl"
-      type="button"
-      @click="logInR"
-    >
+    <!-- <nb-button
+      :name.prop="{ first: 'Jonas', last: 'Thelemann' }"
+      @nbButtonEvent="nbButtonEvent"
+    /> -->
+    <nb-button @nbButtonEvent="logInR">
       {{ $t('logInR') }}
-    </button>
-    <button
-      class="bg-green-600 font-bold px-4 py-2 rounded text-white text-xl"
-      type="button"
-      @click="logInRW"
-    >
+    </nb-button>
+    <nb-button @nbButtonEvent="logInRW">
       {{ $t('logInRW') }}
-    </button>
+    </nb-button>
   </div>
 </template>
 
@@ -26,7 +18,7 @@ import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   methods: {
-    firstLast(event: any) {
+    nbButtonEvent(event: any) {
       console.log(event.detail.first)
     },
     async logInR() {

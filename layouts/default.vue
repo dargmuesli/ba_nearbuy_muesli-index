@@ -40,11 +40,11 @@
 import { defineComponent } from '@nuxtjs/composition-api'
 
 export default defineComponent({
-  mounted() {
-    // console.log(this.$auth.strategy.token.get())
-  },
   head() {
     return this.$nuxtI18nHead({ addSeoAttributes: true })
+  },
+  mounted() {
+    // console.log(this.$auth.strategy.token.get())
   },
 })
 </script>

@@ -232,6 +232,7 @@ export default {
   ],
   vue: {
     config: {
+      ignoredElements: [/nb-\w+/],
       productionTip: false,
     },
   },
