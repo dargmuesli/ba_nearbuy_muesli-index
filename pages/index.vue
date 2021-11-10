@@ -11,20 +11,12 @@
       }}
     </p>
     <div>
-      <button
-        class="bg-green-600 font-bold px-4 py-2 rounded text-white text-xl"
-        type="button"
-        @click="fetch"
-      >
+      <nb-button @nbButtonEvent="fetch">
         {{ $t('fetch') }}
-      </button>
-      <button
-        class="bg-red-600 font-bold px-4 py-2 rounded text-white text-xl"
-        type="button"
-        @click="logOut"
-      >
+      </nb-button>
+      <nb-button secondary @nbButtonEvent="logOut">
         {{ $t('logOut') }}
-      </button>
+      </nb-button>
     </div>
   </div>
 </template>
