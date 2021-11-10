@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col items-center space-y-2">
-    <MyComponent
-      :onFirstLastE="(e) => console.log(e)"
-      :firstLast="{ first: '321', last: 'Jonas' }"
+    <my-component
+      :first-last.prop="{ first: 'Jonas', last: 'Thelemann' }"
+      @firstLastE="firstLast"
     />
     <button
       class="bg-green-600 font-bold px-4 py-2 rounded text-white text-xl"
@@ -24,11 +24,11 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 
-// import { MyComponent } from 'component-library-vue'
-
 export default defineComponent({
-  // components: [MyComponent],
   methods: {
+    firstLast(event: any) {
+      console.log(event.detail.first)
+    },
     async logInR() {
       await this.$auth.loginWith('keycloak')
     },

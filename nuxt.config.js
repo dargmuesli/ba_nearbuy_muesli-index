@@ -90,7 +90,6 @@ export default {
       title: 'Nearbuy Muesli Index',
     }
   },
-  mode: 'spa',
   modules: [
     [
       'nuxt-helmet',
@@ -105,8 +104,10 @@ export default {
     [
       'nuxt-stencil',
       {
-        lib: 'component-library-vue',
-        prefix: 'nb-',
+        hydratePath: 'component-library/hydrate',
+        lib: 'component-library',
+        loaderPath: 'component-library/loader',
+        prefix: 'my-',
       },
     ],
     [
@@ -213,7 +214,10 @@ export default {
           "'self'",
           'https://static.cloudflareinsights.com/beacon.min.js',
         ],
-        'style-src': ["'self'"], // Tailwind
+        'style-src': [
+          "'self'", // Tailwind
+          "'unsafe-inline'", // Shadow root
+        ],
       },
       reportOnly: false,
     },
