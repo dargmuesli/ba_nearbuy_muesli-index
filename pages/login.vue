@@ -1,14 +1,16 @@
 <template>
   <div class="flex flex-col items-center space-y-2">
-    <!-- <nb-button
-      :name.prop="{ first: 'Jonas', last: 'Thelemann' }"
-      @nbButtonEvent="nbButtonEvent"
-    /> -->
-    <nb-button @nbButtonEvent="logInR">
-      {{ $t('logInR') }}
+    <nb-button
+      :name.prop="{ first: 'Read', last: 'Mode' }"
+      @nbButtonEvent="logInR"
+    >
+      {{ $t('logIn', { mode: 'r' }) }}
     </nb-button>
-    <nb-button @nbButtonEvent="logInRW">
-      {{ $t('logInRW') }}
+    <nb-button
+      :name.prop="{ first: 'Read-Write', last: 'Mode' }"
+      @nbButtonEvent="logInRw"
+    >
+      {{ $t('logIn', { mode: 'rw' }) }}
     </nb-button>
   </div>
 </template>
@@ -16,18 +18,28 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 
+interface LogInOptions {
+  isWritable: Boolean
+}
+
 export default defineComponent({
   methods: {
-    nbButtonEvent(event: any) {
-      console.log(event.detail.first)
+    async logIn(e: CustomEvent<string>, options?: LogInOptions) {
+      alert(`[DEBUG] Submitted with name "${e.detail}".`)
+      await this.$auth.loginWith(
+        'keycloak',
+        options?.isWritable
+          ? {
+              params: { scope: 'openid profile email offer-write' },
+            }
+          : {}
+      )
     },
-    async logInR() {
-      await this.$auth.loginWith('keycloak')
+    async logInR(e: CustomEvent<string>) {
+      await this.logIn(e)
     },
-    async logInRW() {
-      await this.$auth.loginWith('keycloak', {
-        params: { scope: 'openid profile email offer-write' },
-      })
+    async logInRw(e: CustomEvent<string>) {
+      await this.logIn(e, { isWritable: true })
     },
   },
 })
@@ -35,9 +47,7 @@ export default defineComponent({
 
 <i18n lang="yml">
 de:
-  logInR: Einloggen mit nearbuy (r)
-  logInRW: Einloggen mit nearbuy (rw)
+  logIn: Einloggen mit nearbuy [{mode}]
 en:
-  logInR: Log in with nearbuy (r)
-  logInRW: Log in with nearbuy (rw)
+  logIn: Log in with nearbuy [{mode}]
 </i18n>
