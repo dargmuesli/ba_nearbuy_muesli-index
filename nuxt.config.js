@@ -102,6 +102,7 @@ export default {
       title: 'Nearbuy Muesli Index',
     }
   },
+  mode: 'spa',
   modules: [
     [
       'nuxt-helmet',
