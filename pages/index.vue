@@ -1,13 +1,18 @@
 <template>
   <div class="flex flex-col items-center">
-    <p v-if="company">
+    <p v-if="loading">
+      {{ $t('loading') }}
+    </p>
+    <p v-else>
       {{
-        $t('metaCompany', {
-          company: [
-            company.name,
-            ...(company.legalstatus ? [company.legalstatus] : []),
-          ].join(' '),
-        })
+        company
+          ? $t('metaCompany', {
+              company: [
+                company.name,
+                ...(company.legalstatus ? [company.legalstatus] : []),
+              ].join(' '),
+            })
+          : $t('metaCompanyNone')
       }}
     </p>
     <div>
@@ -28,21 +33,21 @@ export default defineComponent({
   data() {
     return {
       company: undefined,
+      loading: false,
     }
   },
   methods: {
     async fetch() {
+      this.loading = true
       const me = await this.$axios.$get('persons/me')
-      console.log(me.links.self)
-      // const employments = await this.$axios.$get(
-      //   `persons/${this.trimId(me.links.self)}/employments`
-      // )
-      // console.log(employments)
-      // const company = await this.$axios.$get(
-      //   `companies/${this.trimId(employments[0].links.company)}`
-      // )
-      // console.log(company)
-      // this.company = company
+      const employments = await this.$axios.$get(
+        `persons/${this.trimId(me.links.self)}/employments`
+      )
+      const company = await this.$axios.$get(
+        `companies/${this.trimId(employments[0].links.company)}`
+      )
+      this.company = company
+      this.loading = false
     },
     async logOut() {
       await this.$auth.logout()
@@ -57,11 +62,15 @@ export default defineComponent({
 
 <i18n lang="yml">
 de:
-  fetch: Laden
+  fetch: Meine Firma anzeigen
+  loading: Lade...
   logOut: Ausloggen
-  metaCompany: Du arbeitest bei {company}.
+  metaCompany: Du arbeitest bei "{company}"!
+  metaCompanyNone: Wo arbeitest du?
 en:
-  fetch: Fetch
+  fetch: Display my company
+  loading: Loading...
   logOut: Log out
-  metaCompany: You work at {company}.
+  metaCompany: You work at "{company}"!
+  metaCompanyNone: Where do you work at?
 </i18n>
