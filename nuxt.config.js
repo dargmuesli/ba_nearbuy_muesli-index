@@ -102,7 +102,6 @@ export default {
       title: 'Nearbuy Muesli Index',
     }
   },
-  mode: 'spa',
   modules: [
     [
       'nuxt-helmet',
@@ -243,6 +242,7 @@ export default {
     { handler: '~/middleware/server/headers.ts' },
     { path: '/auth', handler: '~/api/auth.ts' },
   ],
+  ssr: false,
   vue: {
     config: {
       ignoredElements: [/nb-\w+/],
