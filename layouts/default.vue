@@ -11,7 +11,7 @@
         {{
           $t('hello', {
             name: $auth.user.name,
-            permission: $auth.hasScope('offer-write') ? 'rw' : 'r',
+            permission: token.scope.includes('offer-write') ? 'rw' : 'r',
           })
         }}
       </div>
@@ -45,13 +45,20 @@
 
 <script lang="ts">
 import { defineComponent } from '@nuxtjs/composition-api'
+import { decode, JwtPayload } from 'jsonwebtoken'
 
 export default defineComponent({
   head() {
     return this.$nuxtI18nHead({ addSeoAttributes: true })
   },
+  computed: {
+    token() {
+      return decode(
+        (this.$auth.strategy as any).token.get().replace('Bearer ', '')
+      ) as JwtPayload
+    },
+  },
   mounted() {
-    // console.log(this.$auth.strategy.token.get())
     const radios = document.querySelectorAll('input[type=radio]')
 
     for (let i = 0; i < radios.length; i++) {
