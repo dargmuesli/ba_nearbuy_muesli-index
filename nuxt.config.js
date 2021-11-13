@@ -116,9 +116,9 @@ export default {
     [
       'nuxt-stencil',
       {
-        hydratePath: 'component-library/hydrate',
-        lib: 'component-library',
-        loaderPath: 'component-library/loader',
+        hydratePath: '@dargmuesli/nearbuy-web-components/hydrate',
+        lib: '@dargmuesli/nearbuy-web-components',
+        loaderPath: '@dargmuesli/nearbuy-web-components/loader',
         prefix: 'my-',
       },
     ],

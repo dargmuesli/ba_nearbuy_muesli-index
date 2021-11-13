@@ -1079,6 +1079,13 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
+"@dargmuesli/nearbuy-web-components@0.0.1":
+  version "0.0.1"
+  resolved "https://npm.pkg.github.com/download/@dargmuesli/nearbuy-web-components/0.0.1/ce4404735545e2c0c455a25b093bfcf0dd9920d5709b2b8299d203b180d11704#430ce9ff3e338545f54253246214569665064050"
+  integrity sha512-iCuXwRfTRzHI96ROZnJgZGETvFUFhLpvrJyjfFocANvLRo//saqhFpRUfyZ1yYN2JLwoHnO/8GsAY4jF/4oR2g==
+  dependencies:
+    "@stencil/core" "2.10.0"
+
 "@endemolshinegroup/cosmiconfig-typescript-loader@^3.0.2":
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/@endemolshinegroup/cosmiconfig-typescript-loader/-/cosmiconfig-typescript-loader-3.0.2.tgz#eea4635828dde372838b0909693ebd9aafeec22d"
@@ -1782,6 +1789,11 @@
     json-to-ast "^2.0.3"
     jsonpointer "^4.1.0"
     leven "^3.1.0"
+
+"@stencil/core@2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@stencil/core/-/core-2.10.0.tgz#acf44b9ae6578a20f0d09bf94296e833beadc885"
+  integrity sha512-15rWMTPQ/sp0lSV82HVCXkIya3QLN+uBl7pqK4JnTrp4HiLrzLmNbWjbvgCs55gw0lULbCIGbRIEsFz+Pe/Q+A==
 
 "@stylelint/postcss-css-in-js@^0.37.2":
   version "0.37.2"
