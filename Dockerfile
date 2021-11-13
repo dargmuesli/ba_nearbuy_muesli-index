@@ -7,7 +7,8 @@ FROM node:16.8.0-alpine3.14@sha256:e9dec0675a05bded5e881c6839461c2209a4abd8bd162
 # Update and install dependencies.
 # `git` is required by the `yarn` command
 RUN apk add --no-cache \
-  git
+    git \
+  && rm -rf /var/cache/apk/*
 
 WORKDIR /srv/app/
 
@@ -17,8 +18,8 @@ RUN yarn install
 
 COPY ./ ./
 
-COPY ./sqitch/ /srv/sqitch/
-COPY ./docker-entrypoint.sh /usr/local/bin/
+# COPY ./sqitch/ /srv/sqitch/
+# COPY ./docker-entrypoint.sh /usr/local/bin/
 
 CMD ["yarn", "dev", "--hostname", "0.0.0.0"]
 HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost:3000/healthcheck || exit 1
@@ -38,7 +39,7 @@ ENV NODE_ENV=production
 # - `git` is required by the `yarn` command
 RUN apk add --no-cache \
     git \
-  && rm -rf /var/cache/apk/* \
+  && rm -rf /var/cache/apk/*
 
 WORKDIR /srv/app/
 
@@ -48,7 +49,7 @@ RUN yarn run lint \
     && yarn run build
 
 # Discard devDependencies.
-RUN
+RUN yarn install
 
 
 #######################
@@ -56,7 +57,7 @@ RUN
 # Requires node (cannot be static) as the server acts as backend too.
 
 # Should be the specific version of node:alpine.
-FROM node:16.8.0-alpine3.14@sha256:4ca6db20301c460ffa44b1d398788c903306f55de6ded981ab377d036c172836 AS build
+FROM node:16.8.0-alpine3.14@sha256:4ca6db20301c460ffa44b1d398788c903306f55de6ded981ab377d036c172836 AS production
 
 ENV NODE_ENV=production
 
@@ -64,7 +65,7 @@ ENV NODE_ENV=production
 # - `git` is required by the `yarn` command
 RUN apk add --no-cache \
     git \
-  && rm -rf /var/cache/apk/* \
+  && rm -rf /var/cache/apk/*
 
 WORKDIR /srv/app/
 

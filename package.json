@@ -12,7 +12,7 @@
     "lint": "yarn lint:js && yarn lint:style",
     "lint:js": "eslint --ext \".js,.vue\" --ignore-path .gitignore .",
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
-    "prepare": "husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks"
+    "prepare": "if [ -d '.git' ]; then husky install && shx rm -rf .git/hooks && shx ln -s ../.husky .git/hooks; fi"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint",

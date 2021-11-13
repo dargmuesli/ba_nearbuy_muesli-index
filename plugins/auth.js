@@ -7,6 +7,7 @@ export default function ({ app }) {
   app.$auth.$storage.options.redirect = redirect
 
   app.$auth.onError((error, name, _endpoint) => {
+    // eslint-disable-next-line no-console
     console.error(name, error)
   })
 }
