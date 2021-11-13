@@ -1079,10 +1079,10 @@
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
   integrity sha512-5a6wqoJV/xEdbRNKVo6I4hO3VjyDq//8q2f9I6PBAvMesJHFauXDorcNCsr9RzvsZnaWi5NYCcfyqP1QeFHFbw==
 
-"@dargmuesli/nearbuy-web-components@0.0.1":
-  version "0.0.1"
-  resolved "https://npm.pkg.github.com/download/@dargmuesli/nearbuy-web-components/0.0.1/ce4404735545e2c0c455a25b093bfcf0dd9920d5709b2b8299d203b180d11704#430ce9ff3e338545f54253246214569665064050"
-  integrity sha512-iCuXwRfTRzHI96ROZnJgZGETvFUFhLpvrJyjfFocANvLRo//saqhFpRUfyZ1yYN2JLwoHnO/8GsAY4jF/4oR2g==
+"@dargmuesli/nearbuy-web-components@0.0.2":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/@dargmuesli/nearbuy-web-components/-/nearbuy-web-components-0.0.2.tgz#36f850bc692127fe8df27c0f905b774c4b9111ae"
+  integrity sha512-1f5kF2De0eGrPC5AZeMdHGquQlYCTDfjeeWb2gXOcfjnWy/MhvLwxUqtgHbKL/dtbbXBIyWsz0WwFy637Hkl8g==
   dependencies:
     "@stencil/core" "2.10.0"
 

@@ -12,7 +12,7 @@ RUN apk add --no-cache \
 
 WORKDIR /srv/app/
 
-COPY ./.npmrc ./package.json ./yarn.lock ./
+COPY ./package.json ./yarn.lock ./
 
 RUN yarn install
 
