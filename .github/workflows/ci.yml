@@ -33,7 +33,7 @@ jobs:
           # Use Docker `latest` tag convention
           [ "$VERSION" == "master" ] && VERSION=latest
 
-          echo IMAGE_ID=nearbuy_muesli-index
+          echo IMAGE_ID=ghcr.io/dargmuesli/nearbuy_muesli-index
           echo VERSION=$VERSION
 
           docker buildx build \
