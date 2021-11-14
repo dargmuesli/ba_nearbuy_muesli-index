@@ -81,16 +81,16 @@ jobs:
           fi
 
       - name: Zip
-        if: ${{ github.event_name != 'pull_request' && startsWith(github.ref, 'refs/tags/') }}
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
         uses: montudor/action-zip@0852c26906e00f8a315c704958823928d8018b28 # renovate: tag=v1.0.0
         with:
-          args: zip -qq -r ./${{ github.repository }}.zip ./dist/
+          args: zip -qq -r ./${{ github.event.repository.name }}.zip ./dist/
 
       - uses: actions/upload-artifact@27121b0bdffd731efa15d66772be8dc71245d074 # renovate: tag=v2
-        if: ${{ github.event_name != 'pull_request' && startsWith(github.ref, 'refs/tags/') }}
+        if: ${{ startsWith(github.ref, 'refs/tags/') }}
         with:
-          name: ${{ github.repository }}.zip
-          path: ./${{ github.repository }}.zip
+          name: ${{ github.event.repository.name }}.zip
+          path: ./${{ github.event.repository.name }}.zip
           retention-days: 1
   semantic-release:
     if: github.event_name != 'pull_request'
