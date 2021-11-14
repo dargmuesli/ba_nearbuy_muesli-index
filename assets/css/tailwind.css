@@ -12,5 +12,5 @@ body.theme-muesli-index nb-button::part(nb-button) {
 }
 
 body.theme-muesli-index nb-button[secondary]::part(nb-button):hover {
-  background-color: rgba(72, 111, 80, 0.04);
+  background-color: rgba(72 111 80 / 4%);
 }
