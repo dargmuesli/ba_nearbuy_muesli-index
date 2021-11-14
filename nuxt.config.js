@@ -1,4 +1,4 @@
-import bodyParser from 'body-parser'
+import { json } from 'body-parser'
 
 import { BASE_URL } from './plugins/baseUrl'
 
@@ -238,7 +238,7 @@ export default {
     middleware: ['auth'],
   },
   serverMiddleware: [
-    bodyParser.json(),
+    json(),
     { handler: '~/middleware/server/headers.ts' },
     { path: '/auth', handler: '~/api/auth.ts' },
   ],
