@@ -117,11 +117,11 @@ jobs:
     steps:
       - uses: actions/download-artifact@3be87be14a055c47b01d3bd88f8fe02320a9bb60 # renovate: tag=v2
         with:
-          name: ${{ github.repository }}.zip
+          name: ${{ github.event.repository.name }}.zip
 
       - name: GitHub Release Asset
         uses: softprops/action-gh-release@6034af24fba4e5a8e975aaa6056554efe4c794d0 # renovate: tag=v1
         with:
-          files: ${{ github.repository }}.zip
+          files: ${{ github.event.repository.name }}.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
