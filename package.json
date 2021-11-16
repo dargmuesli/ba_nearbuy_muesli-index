@@ -40,7 +40,7 @@
     "@babel/eslint-parser": "7.16.3",
     "@commitlint/cli": "14.1.0",
     "@commitlint/config-conventional": "14.1.0",
-    "@intlify/eslint-plugin-vue-i18n": "1.0.1",
+    "@intlify/eslint-plugin-vue-i18n": "1.1.0",
     "@nuxt/types": "2.15.8",
     "@nuxt/typescript-build": "2.1.0",
     "@nuxtjs/eslint-config-typescript": "7.0.2",
