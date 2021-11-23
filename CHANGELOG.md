@@ -1,3 +1,10 @@
+## [0.0.4](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.0.3...0.0.4) (2021-11-23)
+
+
+### Bug Fixes
+
+* **nuxt:** use body parser default export ([4c6b1c7](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/4c6b1c7986a9514521b101cfabf0c5c74947697b))
+
 ## [0.0.3](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.0.2...0.0.3) (2021-11-14)
 
 
