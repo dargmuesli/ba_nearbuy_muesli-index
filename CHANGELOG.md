@@ -1,3 +1,10 @@
+## [0.0.5](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.0.4...0.0.5) (2021-11-25)
+
+
+### Bug Fixes
+
+* **nuxt:** centralize csp ([cbe5faa](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/cbe5faab6e2de3eccd2ddcc8cfa7100de7474958))
+
 ## [0.0.4](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.0.3...0.0.4) (2021-11-23)
 
 
