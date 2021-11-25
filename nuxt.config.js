@@ -2,6 +2,36 @@ import bodyParser from 'body-parser'
 
 import { BASE_URL } from './plugins/baseUrl'
 
+const CSP_POLICIES = {
+  'base-uri': ["'none'"], // Mozilla Observatory.
+  'connect-src': [
+    "'self'",
+    'http://localhost:8080/v1/',
+    'https://api.nearbuy-food.de/v1/',
+    'https://api.staging.nearbuy-food.de/v1/',
+    'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging/',
+  ],
+  'default-src': ["'none'"],
+  'font-src': ["'self'"],
+  'form-action': ["'none'"], // Mozilla Observatory.
+  'frame-ancestors': [
+    'http://localhost:3000',
+    'https://nearbuy-food.de',
+    'https://staging.nearbuy-food.de',
+  ],
+  'img-src': ["'self'"],
+  'manifest-src': ["'self'"], // Chrome
+  'report-uri': 'https://dargmuesli.report-uri.com/r/d/csp/enforce',
+  'script-src': [
+    "'self'",
+    'https://static.cloudflareinsights.com/beacon.min.js',
+  ],
+  'style-src': [
+    "'self'", // Tailwind
+    "'unsafe-inline'", // Shadow root
+  ],
+}
+const CSP_REPORT_ONLY = false
 const KEYCLOAK_REALM_URI =
   'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging'
 const KEYCLOAK_REDIRECT_URI = 'http://localhost:3000'
@@ -106,6 +136,11 @@ export default {
     [
       'nuxt-helmet',
       {
+        contentSecurityPolicy: {
+          directives: CSP_POLICIES,
+          reportOnly: CSP_REPORT_ONLY,
+        },
+        frameguard: false,
         hsts: {
           maxAge: 31536000,
           preload: true,
@@ -125,7 +160,10 @@ export default {
     [
       '@nuxtjs/axios',
       {
-        baseUrl: 'https://api.staging.nearbuy-food.de/v1/',
+        baseUrl:
+          process.env.NODE_ENV === 'production'
+            ? 'https://api.staging.nearbuy-food.de/v1/'
+            : 'http://localhost:8080/v1/',
         debug: true,
       },
     ],
@@ -208,30 +246,8 @@ export default {
   plugins: ['~/plugins/baseUrl.ts'],
   render: {
     csp: {
-      policies: {
-        'base-uri': ["'none'"], // Mozilla Observatory.
-        'connect-src': [
-          "'self'",
-          'https://api.staging.nearbuy-food.de/v1/',
-          'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging/',
-        ],
-        'default-src': ["'none'"],
-        'font-src': ["'self'"],
-        'form-action': ["'none'"], // Mozilla Observatory.
-        'frame-ancestors': ["'none'"], // Mozilla Observatory.
-        'img-src': ["'self'"],
-        'manifest-src': ["'self'"], // Chrome
-        'report-uri': 'https://dargmuesli.report-uri.com/r/d/csp/enforce',
-        'script-src': [
-          "'self'",
-          'https://static.cloudflareinsights.com/beacon.min.js',
-        ],
-        'style-src': [
-          "'self'", // Tailwind
-          "'unsafe-inline'", // Shadow root
-        ],
-      },
-      reportOnly: false,
+      policies: CSP_POLICIES,
+      reportOnly: CSP_REPORT_ONLY,
     },
   },
   router: {
