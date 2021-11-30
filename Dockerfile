@@ -22,7 +22,7 @@ COPY ./ ./
 # COPY ./docker-entrypoint.sh /usr/local/bin/
 
 CMD ["yarn", "dev", "--hostname", "0.0.0.0"]
-HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost:3000/healthcheck || exit 1
+HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost:3001/healthcheck || exit 1
 
 
 ########################

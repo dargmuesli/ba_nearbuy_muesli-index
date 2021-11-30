@@ -7,6 +7,7 @@ const CSP_POLICIES = {
   'connect-src': [
     "'self'",
     'http://localhost:8080/v1/',
+    'http://api.staging.nearbuy-food.de.local.gd/v1/',
     'https://api.nearbuy-food.de/v1/',
     'https://api.staging.nearbuy-food.de/v1/',
     'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging/',
@@ -34,7 +35,7 @@ const CSP_POLICIES = {
 const CSP_REPORT_ONLY = false
 const KEYCLOAK_REALM_URI =
   'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging'
-const KEYCLOAK_REDIRECT_URI = 'http://localhost:3000'
+const KEYCLOAK_REDIRECT_URI = 'http://localhost:3001'
 const LOCALES = [
   {
     code: 'en',
@@ -163,7 +164,7 @@ export default {
         baseUrl:
           process.env.NODE_ENV === 'production'
             ? 'https://api.staging.nearbuy-food.de/v1/'
-            : 'http://localhost:8080/v1/',
+            : 'http://api.staging.nearbuy-food.de.local.gd/v1/',
         debug: true,
       },
     ],
