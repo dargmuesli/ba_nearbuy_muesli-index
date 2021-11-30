@@ -29,6 +29,8 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
 
+const consola = require('consola')
+
 export default defineComponent({
   data() {
     return {
@@ -40,12 +42,23 @@ export default defineComponent({
     async fetch() {
       this.loading = true
       const me = await this.$axios.$get('persons/me')
+
       const employments = await this.$axios.$get(
         `persons/${this.trimId(me.links.self)}/employments`
       )
+      if (!employments || employments.length === 0) {
+        this.loading = false
+        return consola.error('There is no employment!')
+      }
+
       const company = await this.$axios.$get(
         `companies/${this.trimId(employments[0].links.company)}`
       )
+      if (!company) {
+        this.loading = false
+        return consola.error('There is no company!')
+      }
+
       this.company = company
       this.loading = false
     },
