@@ -31,7 +31,7 @@
     "core-js": "3.19.3",
     "express-session": "1.17.2",
     "jsonwebtoken": "8.5.1",
-    "keycloak-connect": "15.0.2",
+    "keycloak-connect": "15.1.0",
     "nuxt": "2.15.8",
     "nuxt-healthcheck": "1.0.1",
     "nuxt-helmet": "2.0.1",
