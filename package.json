@@ -2,7 +2,7 @@
   "name": "nearbuy_muesli-index",
   "private": true,
   "version": "0.1.0",
-  "scheduleVersion": "0.0.1",
+  "scheduleVersion": "0.1.1",
   "description": "Calculates the 'Muesli index', representing the availability of ingredients required for a yummy muesli. Requests for missing ingredients can be added with one click.",
   "scripts": {
     "dev": "nuxt -p 3001",
