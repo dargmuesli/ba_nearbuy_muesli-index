@@ -6891,10 +6891,10 @@ jwt-decode@^3.1.2:
   resolved "https://registry.yarnpkg.com/jwt-decode/-/jwt-decode-3.1.2.tgz#3fb319f3675a2df0c2895c8f5e9fa4b67b04ed59"
   integrity sha512-UfpWE/VZn0iP50d8cz9NrZLM9lSWhcJ+0Gt/nm4by88UL+J1SiKN8/5dkjMmbEzwL2CAe+67GsegCbIKtbp75A==
 
-keycloak-connect@15.1.0:
-  version "15.1.0"
-  resolved "https://registry.yarnpkg.com/keycloak-connect/-/keycloak-connect-15.1.0.tgz#bbdaf5031adfad1bdceee91cc1a86be084facac5"
-  integrity sha512-j+vrXp4DiODyCCmGGWl5V55Mv/clqRPP0IXkMV07zVWeCYqyx53zt092rJ35quXXZBK9KnQm+ulAWA9bwsnTBw==
+keycloak-connect@15.1.1:
+  version "15.1.1"
+  resolved "https://registry.yarnpkg.com/keycloak-connect/-/keycloak-connect-15.1.1.tgz#cb6f937410eda50c02844cb1224f845b313c0f3c"
+  integrity sha512-vbCEiEqPFz5NKiX1/j0Et2KUj3K2bKIR90HOTSSRqcS3tj/6rGSE42Z4Lci1zcGgArf/PTAsjNe4/hb/gFRFFg==
   dependencies:
     jwk-to-pem "^2.0.0"
   optionalDependencies:
