@@ -28,7 +28,7 @@
     "@nuxtjs/sitemap": "2.4.0",
     "body-parser": "1.19.1",
     "consola": "2.15.3",
-    "core-js": "3.20.0",
+    "core-js": "3.20.1",
     "express-session": "1.17.2",
     "jsonwebtoken": "8.5.1",
     "keycloak-connect": "15.1.1",
