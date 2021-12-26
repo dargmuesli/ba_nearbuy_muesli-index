@@ -155,7 +155,7 @@ export default {
         hydratePath: '@dargmuesli/nearbuy-web-components/hydrate',
         lib: '@dargmuesli/nearbuy-web-components',
         loaderPath: '@dargmuesli/nearbuy-web-components/loader',
-        prefix: 'my-',
+        prefix: 'nb-',
       },
     ],
     [
@@ -262,7 +262,6 @@ export default {
   ssr: false,
   vue: {
     config: {
-      ignoredElements: [/nb-\w+/],
       productionTip: false,
     },
   },
