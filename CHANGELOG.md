@@ -1,3 +1,10 @@
+# [0.2.0](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.1.1...0.2.0) (2022-01-04)
+
+
+### Features
+
+* calculate muesli index ([5740708](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/5740708daeade835f29b9dd0a53694239269cb90))
+
 ## [0.1.1](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.1.0...0.1.1) (2021-12-13)
 
 
