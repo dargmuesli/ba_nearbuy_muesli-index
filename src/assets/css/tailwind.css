@@ -1,0 +1,18 @@
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+nb-button::part(nb-button) {
+  font-weight: normal;
+}
+
+body.theme-muesli-index nb-button::part(nb-button) {
+  /* doiuse-disable css-nesting */
+  @apply rounded normal-case; /* doiuse-enable css-nesting */
+}
+
+body.theme-muesli-index nb-button[secondary]::part(nb-button):hover {
+  background-color: rgba(72 111 80 / 4%);
+}

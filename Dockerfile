@@ -1,75 +1,97 @@
 #############
-# Serve Nuxt in development mode.
+# Create base image.
 
-# Should be the specific version of node:alpine.
-FROM node:16.13.1-alpine3.14@sha256:a9b9cb880fa429b0bea899cd3b1bc081ab7277cc97e6d2dcd84bd9753b2027e1 AS development
+FROM node:20.11.1-alpine AS base-image
 
-# Update and install dependencies.
-# `git` is required by the `yarn` command
-RUN apk add --no-cache \
-    git \
-  && rm -rf /var/cache/apk/*
+# The `CI` environment variable must be set for pnpm to run in headless mode
+ENV CI=true
 
 WORKDIR /srv/app/
 
-COPY ./package.json ./yarn.lock ./
+RUN apk update \
+    && apk add --no-cache git \
+    && corepack enable
 
-RUN yarn install
 
-COPY ./ ./
+#############
+# Serve Nuxt in development mode.
 
-# COPY ./sqitch/ /srv/sqitch/
-# COPY ./docker-entrypoint.sh /usr/local/bin/
+FROM base-image AS development
 
-CMD ["yarn", "dev", "--hostname", "0.0.0.0"]
-HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost:3001/healthcheck || exit 1
+COPY ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+
+VOLUME /srv/.pnpm-store
+VOLUME /srv/app
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["pnpm", "run", "dev", "--host"]
+EXPOSE 3001
+
+# TODO: support healthcheck while starting (https://github.com/nuxt/framework/issues/6915)
+# HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost:3001/api/healthcheck || exit 1
 
 
 ########################
-# Build Nuxt.
+# Prepare Nuxt.
 
-# Should be the specific version of node:alpine.
-FROM node:16.13.1-alpine3.14@sha256:a9b9cb880fa429b0bea899cd3b1bc081ab7277cc97e6d2dcd84bd9753b2027e1 AS build
+FROM base-image AS prepare
 
-ARG NUXT_ENV_STACK_DOMAIN=jonas-thelemann.de
-ENV NUXT_ENV_STACK_DOMAIN=${NUXT_ENV_STACK_DOMAIN}
+ARG GL_TOKEN
+ENV GL_TOKEN=${GL_TOKEN}
+
+RUN npm config set -- //gitlab.com/api/v4/projects/55455777/packages/npm/:_authToken="${GL_TOKEN}"
+
+COPY ./pnpm-lock.yaml ./
+
+RUN pnpm fetch
+
+COPY ./ ./
+
+RUN pnpm install --offline
+
+
+########################
+# Build for Node deployment.
+
+FROM prepare AS build-node
+
 ENV NODE_ENV=production
+RUN pnpm run build:node
 
-# Update and install dependencies.
-# - `git` is required by the `yarn` command
-RUN apk add --no-cache \
-    git \
-  && rm -rf /var/cache/apk/*
 
-WORKDIR /srv/app/
+########################
+# Nuxt: lint
 
-COPY --from=development /srv/app/ ./
+FROM prepare AS lint
 
-RUN yarn run lint \
-    && yarn run build
+RUN pnpm -r run lint
 
-# Discard devDependencies.
-RUN yarn install
+
+#######################
+# Collect build, lint and test results.
+
+FROM base-image AS collect
+
+COPY --from=build-node /srv/app/src/.output ./.output
+COPY --from=build-node /srv/app/src/package.json ./package.json
+COPY --from=lint /srv/app/package.json /tmp/package.json
 
 
 #######################
 # Provide a web server.
 # Requires node (cannot be static) as the server acts as backend too.
 
-# Should be the specific version of node:alpine.
-FROM node:16.13.1-alpine3.14@sha256:a9b9cb880fa429b0bea899cd3b1bc081ab7277cc97e6d2dcd84bd9753b2027e1 AS production
+FROM collect AS production
 
 ENV NODE_ENV=production
 
-# Update and install dependencies.
-# - `git` is required by the `yarn` command
-RUN apk add --no-cache \
-    git \
-  && rm -rf /var/cache/apk/*
+# Update dependencies.
+RUN apk update \
+    && apk upgrade --no-cache
 
-WORKDIR /srv/app/
-
-COPY --from=build /srv/app/ ./
-
-CMD ["yarn", "start", "--hostname", "0.0.0.0"]
-HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost/healthcheck || exit 1
+ENTRYPOINT ["pnpm"]
+CMD ["pnpm", "run", "start:node"]
+# HEALTHCHECK --interval=10s CMD wget -O /dev/null http://localhost:3000/api/healthcheck || exit 1
+EXPOSE 3000
+LABEL org.opencontainers.image.source="https://github.com/dargmuesli/ba_nearbuy_muesli-index"
+LABEL org.opencontainers.image.description="Calculates the 'Muesli index', representing the availability of ingredients required for a yummy muesli. Requests for missing ingredients can be added with one click."
