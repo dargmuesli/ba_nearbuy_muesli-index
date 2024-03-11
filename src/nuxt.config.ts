@@ -7,7 +7,14 @@ export default defineNuxtConfig({
       database: true,
     },
   },
-  sourcemap: true,
+  runtimeConfig: {
+    nearbuy: {
+      keycloak: {
+        realmUri: 'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging',
+        redirectUri: 'http://localhost:3001/login/keycloak/callback',
+      },
+    },
+  },
   vue: {
     compilerOptions: {
       isCustomElement: (tag: string) => tag.startsWith('nb-'),
