@@ -58,10 +58,6 @@
 <script setup lang="ts">
 import { parseJWT } from 'oslo/jwt'
 
-// head() {
-//   return this.$nuxtI18nHead({ addSeoAttributes: true })
-// },
-
 const { t } = useI18n()
 const route = useRoute()
 const user = useUser()
