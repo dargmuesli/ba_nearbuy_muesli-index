@@ -2,11 +2,7 @@ import { BetterSqlite3Adapter } from '@lucia-auth/adapter-sqlite'
 import { Keycloak } from 'arctic'
 import { Lucia } from 'lucia'
 
-import { KEYCLOAK_REDIRECT_URI } from '../../utils/constants'
 import { db, type DatabaseSession, type DatabaseUser } from './db'
-
-const KEYCLOAK_REALM_URI =
-  'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging'
 
 const adapter = new BetterSqlite3Adapter(db, {
   session: 'session',
@@ -31,11 +27,13 @@ export const lucia = new Lucia(adapter, {
   },
 })
 
+const runtimeConfig = useRuntimeConfig()
+
 export const keycloak = new Keycloak(
-  KEYCLOAK_REALM_URI,
+  runtimeConfig.nearbuy.keycloak.realmUri,
   'plugin_muesli-index_public',
   '', // TODO
-  KEYCLOAK_REDIRECT_URI,
+  runtimeConfig.nearbuy.keycloak.redirectUri,
 )
 
 declare module 'lucia' {
