@@ -1,3 +1,10 @@
+## [0.3.0](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.2.0...0.3.0) (2024-03-11)
+
+
+### Features
+
+* migrate to nuxt 3 ([f602382](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/f60238257bb2f08c433e659f79408b1cdb1a8541))
+
 # [0.2.0](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.1.1...0.2.0) (2022-01-04)
 
 
