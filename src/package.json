@@ -39,6 +39,9 @@
   "engines": {
     "node": "20"
   },
+  "files": [
+    "plugin.ts"
+  ],
   "name": "@dargmuesli/nearbuy-plugin_muesli-index",
   "private": true,
   "scripts": {
