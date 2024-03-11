@@ -1,5 +1,7 @@
-[![build status](https://github.com/dargmuesli/nearbuy_muesli-index/workflows/CI/badge.svg)](https://github.com/dargmuesli/nearbuy_muesli-index/actions?query=workflow%3ACI "build status")
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/dargmuesli/nearbuy_muesli-index.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/dargmuesli/nearbuy_muesli-index/context:javascript)
+[![ci status][ci-image]][ci-url]
+
+[ci-image]: https://img.shields.io/github/actions/workflow/status/dargmuesli/ba_nearbuy_muesli-index/ci.yml
+[ci-url]: https://github.com/dargmuesli/ba_nearbuy_muesli-index/actions/workflows/ci.yml
 
 # nearbuy_muesli-index
 
