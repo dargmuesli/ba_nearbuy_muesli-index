@@ -39,8 +39,8 @@ FROM base-image AS prepare
 ARG GL_TOKEN
 ENV GL_TOKEN=${GL_TOKEN}
 
-RUN npm config set -- //gitlab.com/api/v4/projects/55455777/packages/npm/:_authToken="${GL_TOKEN}"
-RUN npm config set -- //gitlab.com/api/v4/projects/55514065/packages/npm/:_authToken="${GL_TOKEN}"
+RUN npm config set -- //gitlab.com/api/v4/projects/55455777/packages/npm/:_authToken="${GL_TOKEN}" \
+    && npm config set -- //gitlab.com/api/v4/projects/55514065/packages/npm/:_authToken="${GL_TOKEN}"
 
 COPY ./pnpm-lock.yaml ./
 
