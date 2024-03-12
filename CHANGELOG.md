@@ -1,3 +1,10 @@
+## [0.4.4](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.3...0.4.4) (2024-03-12)
+
+
+### Bug Fixes
+
+* **plugin:** correct name ([11facab](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/11facaba868e7c98b4e76763f37782b991c34b58))
+
 ## [0.4.3](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.2...0.4.3) (2024-03-12)
 
 
