@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.1...0.4.2) (2024-03-12)
+
+
+### Bug Fixes
+
+* **plugin:** correct compatibility version ([e36bb2f](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/e36bb2fed644da959a651af2181a080d2b7cc38e))
+
 ## [0.4.1](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.0...0.4.1) (2024-03-12)
 
 
