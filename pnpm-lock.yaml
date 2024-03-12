@@ -54,8 +54,8 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(better-sqlite3@9.4.3)(lucia@3.1.1)
       '@ninjaneers/nearbuy-web-components':
-        specifier: 0.1.0
-        version: 0.1.0
+        specifier: 0.1.1
+        version: 0.1.1
       '@ninjaneers/nearbuy-web-components_vue':
         specifier: 0.0.1
         version: 0.0.1(vue@3.4.21)
@@ -1863,6 +1863,12 @@ packages:
 
   /@ninjaneers/nearbuy-web-components@0.1.0:
     resolution: {integrity: sha1-IWPbi0OkfUJnr/EPeEdfUKO1n0I=, tarball: https://gitlab.com/api/v4/projects/55455777/packages/npm/@ninjaneers/nearbuy-web-components/-/@ninjaneers/nearbuy-web-components-0.1.0.tgz}
+    dependencies:
+      '@stencil/core': 4.12.5
+    dev: true
+
+  /@ninjaneers/nearbuy-web-components@0.1.1:
+    resolution: {integrity: sha1-0Zbdu11OutumsPOLJHxFzdBWK3o=, tarball: https://gitlab.com/api/v4/projects/55455777/packages/npm/@ninjaneers/nearbuy-web-components/-/@ninjaneers/nearbuy-web-components-0.1.1.tgz}
     dependencies:
       '@stencil/core': 4.12.5
     dev: true
