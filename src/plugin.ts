@@ -2,7 +2,7 @@
 import packageJson from './package.json'
 
 const nearbuyPluginMuesliIndex /* : NearbuyPluginOptions */ = {
-  id: 'muesli-index',
+  id: packageJson.name,
   name: {
     de: 'Muesli-Index',
     en: 'Muesli Index',
