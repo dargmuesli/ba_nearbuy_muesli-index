@@ -30,8 +30,18 @@
     ],
     "@semantic-release/changelog",
     "@semantic-release/github",
-    "@semantic-release/git",
-    "@semantic-release/npm"
+    [
+      "@semantic-release/git",
+      {
+        "assets": ["CHANGELOG.md", "./src/package.json"]
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "./src"
+      }
+    ]
   ],
   "tagFormat": "${version}"
 }
