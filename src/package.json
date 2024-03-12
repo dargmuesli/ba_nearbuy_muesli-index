@@ -43,7 +43,6 @@
     "plugin.ts"
   ],
   "name": "@dargmuesli/nearbuy-plugin_muesli-index",
-  "private": true,
   "scripts": {
     "build": "pnpm run build:node",
     "build:node": "nuxt build",
