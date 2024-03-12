@@ -1,3 +1,10 @@
+## [0.4.0](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.3.0...0.4.0) (2024-03-12)
+
+
+### Features
+
+* add plugin definition ([3549950](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/354995091634b0788799444eb42b5d7a175e6b85))
+
 ## [0.3.0](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.2.0...0.3.0) (2024-03-11)
 
 
