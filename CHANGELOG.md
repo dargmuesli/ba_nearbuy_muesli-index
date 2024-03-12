@@ -1,3 +1,11 @@
+## [0.4.1](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.0...0.4.1) (2024-03-12)
+
+
+### Bug Fixes
+
+* **deps:** update dargmuesli/github-actions to v2.0.0-beta.10 ([b2e86d6](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/b2e86d600a99539e2e3c340113b60fb1f89e6205))
+* **deps:** update dargmuesli/github-actions to v2.0.0-beta.7 ([1f868ad](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/1f868ad15661394ff29afd40c263fbc3180cd785))
+
 ## [0.4.0](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.3.0...0.4.0) (2024-03-12)
 
 
