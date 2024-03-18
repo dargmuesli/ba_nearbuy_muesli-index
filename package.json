@@ -13,7 +13,7 @@
     "lint-staged": "15.2.2",
     "semantic-release": "23.0.4"
   },
-  "packageManager": "pnpm@8.15.4",
+  "packageManager": "pnpm@8.15.5",
   "scripts": {
     "build": "pnpm --dir src run build:node",
     "build:node": "pnpm --dir src run build",
