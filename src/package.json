@@ -8,7 +8,7 @@
     "@ninjaneers/nearbuy-web-plugins": "2.0.0-beta.3",
     "@nuxtjs/eslint-config-typescript": "12.1.0",
     "@nuxtjs/i18n": "8.2.0",
-    "@nuxtjs/seo": "2.0.0-rc.9",
+    "@nuxtjs/seo": "2.0.0-rc.10",
     "@nuxtjs/tailwindcss": "6.11.4",
     "@types/better-sqlite3": "7.6.9",
     "arctic": "1.2.1",
