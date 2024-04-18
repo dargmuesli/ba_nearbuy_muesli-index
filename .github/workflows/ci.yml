@@ -30,7 +30,6 @@ jobs:
     permissions:
       contents: write
     secrets:
-      NPM_CONFIG: //gitlab.com/:_authToken="${{ secrets.GL_TOKEN }}"
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
     with:
@@ -45,7 +44,6 @@ jobs:
       BUILD_ARGUMENTS: RELEASE_NAME=${{ needs.release_semantic_dry.outputs.new_release_version }}
       TAG: ${{ needs.release_semantic_dry.outputs.new_release_version }}
     secrets:
-      BUILD_ARGUMENTS: GL_TOKEN=${{ secrets.GL_TOKEN }}
       PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
   release_semantic:
     needs: build
@@ -54,6 +52,5 @@ jobs:
     permissions:
       contents: write
     secrets:
-      NPM_CONFIG: //gitlab.com/:_authToken="${{ secrets.GL_TOKEN }}"
       NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       PERSONAL_ACCESS_TOKEN: ${{ secrets.PERSONAL_ACCESS_TOKEN }}

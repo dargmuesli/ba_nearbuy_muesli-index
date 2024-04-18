@@ -36,11 +36,6 @@ EXPOSE 3001
 
 FROM base-image AS prepare
 
-ARG GL_TOKEN
-ENV GL_TOKEN=${GL_TOKEN}
-
-RUN npm config set -- //gitlab.com/:_authToken="${GL_TOKEN}"
-
 COPY ./pnpm-lock.yaml ./
 
 RUN pnpm fetch
