@@ -28,7 +28,6 @@ export default withNuxt(
     },
   }, // TODO: remove once `@intlify/vue-i18n/no-duplicate-keys-in-locale` is checked across layers
   {
-    files: ['pages/**/*'],
     rules: {
       'vue/v-on-event-hyphenation': 'off',
     },
