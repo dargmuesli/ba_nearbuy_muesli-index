@@ -1,6 +1,7 @@
 {
   "description": "Calculates the 'Muesli index', representing the availability of ingredients required for a yummy muesli. Requests for missing ingredients can be added with one click.",
   "devDependencies": {
+    "@dargmuesli/nuxt-vio": "11.2.0",
     "@intlify/eslint-plugin-vue-i18n": "2.0.0",
     "@lucia-auth/adapter-sqlite": "3.0.1",
     "@ninjaneers/nearbuy-web-components": "1.0.0-beta.3",
@@ -14,7 +15,7 @@
     "arctic": "1.5.0",
     "better-sqlite3": "9.5.0",
     "consola": "3.2.3",
-    "eslint": "8.57.0",
+    "eslint": "9.0.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-compat": "4.2.0",
     "eslint-plugin-nuxt": "4.0.0",
@@ -51,7 +52,7 @@
     "generate": "pnpm run build:static",
     "lint": "pnpm run lint:js && pnpm run lint:types && pnpm run lint:style",
     "lint:fix": "pnpm run lint:js --fix",
-    "lint:js": "eslint --cache --ext .js,.ts,.vue --ignore-path .gitignore .",
+    "lint:js": "eslint --cache",
     "lint:staged": "lint-staged",
     "lint:style": "stylelint --cache \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint:types": "nuxt typecheck",
