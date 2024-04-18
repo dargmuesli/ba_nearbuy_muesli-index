@@ -1,7 +1,12 @@
 import { LOCALES } from './utils/constants'
 
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/i18n', '@nuxtjs/seo'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/i18n',
+    '@nuxtjs/seo',
+  ],
   nitro: {
     experimental: {
       database: true,
