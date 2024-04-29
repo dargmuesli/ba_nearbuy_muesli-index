@@ -75,8 +75,8 @@ importers:
         specifier: 7.6.10
         version: 7.6.10
       arctic:
-        specifier: 1.7.0
-        version: 1.7.0
+        specifier: 1.8.0
+        version: 1.8.0
       better-sqlite3:
         specifier: 9.6.0
         version: 9.6.0
@@ -2519,8 +2519,8 @@ packages:
     resolution: {integrity: sha512-ZcbTaIqJOfCc03QwD468Unz/5Ir8ATtvAHsK+FdXbDIbGfihqh9mrvdcYunQzqn4HrvWWaFyaxJhGZagaJJpPQ==}
     engines: {node: '>= 14'}
 
-  arctic@1.7.0:
-    resolution: {integrity: sha512-pE1yfMyC2hQt/nogjSjspz0c8MRcM3r2hxkIwT+Glo9H13vtzSxUm/PsdbQA6iZRta4P+fTpVZaW/2/P/jnjNQ==}
+  arctic@1.8.0:
+    resolution: {integrity: sha512-gFzu67CMG7PvBrxv5E1FetiG+OeDAgc3dRDY+xTus+qnH+ip1qJVMRaJ4OSiYRx54/LWVR/B7Bdym0uPhrmIzg==}
 
   are-docs-informative@0.0.2:
     resolution: {integrity: sha512-ixiS0nLNNG5jNQzgZJNoUpBKdo9yTYZMGJ+QgT2jmjR7G7+QHRCc4v6LQ3NgE7EBJq+o0ams3waJwkrlBom8Ig==}
@@ -10688,7 +10688,7 @@ snapshots:
       tar-stream: 3.1.7
       zip-stream: 6.0.1
 
-  arctic@1.7.0:
+  arctic@1.8.0:
     dependencies:
       oslo: 1.2.0
 
