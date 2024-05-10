@@ -33,10 +33,6 @@
 <script setup lang="ts">
 import { consola } from 'consola'
 
-definePageMeta({
-  middleware: ['protected'],
-})
-
 const nearbuyFetch = useNearbuyFetch()
 const { t } = useI18n()
 const companyId = useCompanyId()
