@@ -54,14 +54,14 @@ importers:
         specifier: 3.0.1
         version: 3.0.1(better-sqlite3@10.0.0)(lucia@3.2.0)
       '@ninjaneers/nearbuy-web-components':
-        specifier: 1.0.0-beta.3
-        version: 1.0.0-beta.3
+        specifier: 1.0.0
+        version: 1.0.0
       '@ninjaneers/nearbuy-web-components_vue':
-        specifier: 1.0.0-beta.3
-        version: 1.0.0-beta.3(vue@3.4.27(typescript@5.4.5))
+        specifier: 1.0.0
+        version: 1.0.0(vue@3.4.27(typescript@5.4.5))
       '@ninjaneers/nearbuy-web-plugins':
-        specifier: 2.0.0-beta.4
-        version: 2.0.0-beta.4
+        specifier: 2.0.0
+        version: 2.0.0
       '@nuxtjs/i18n':
         specifier: 8.3.1
         version: 8.3.1(rollup@4.17.2)(vue@3.4.27(typescript@5.4.5))
@@ -962,16 +962,16 @@ packages:
     resolution: {integrity: sha512-VCU5btoGZ8M6iI7HSwpfZXCpBLKWFmRtq5xYt0K7dY96BZWVBmaZY6Tn+w4L2DrGXwAsIeOFNp8CHjVXfuCAkg==}
     engines: {node: '>=18.0.0'}
 
-  '@ninjaneers/nearbuy-web-components@1.0.0-beta.3':
-    resolution: {integrity: sha512-Ll83Vq33r+9DFKAGLQt5lKtGZmUTxJUaz+PF1Mkm7a/ezGDtsZiudWZPYydDuoB43LSWC8xj/ZCgCxZvM7T2SA==}
+  '@ninjaneers/nearbuy-web-components@1.0.0':
+    resolution: {integrity: sha512-pCbdJlzaQsjvzpBgA/z0dywt6/jDlIMCS9oGR1niK+e+q3SeowyuP+sXLReozEajs7P1CVD5Apqq1C9hK98WJA==}
 
-  '@ninjaneers/nearbuy-web-components_vue@1.0.0-beta.3':
-    resolution: {integrity: sha512-314Iv7by6+1NeBlF1XANHKmHXy7q4zMxxwli+ThBc7ZW6Yid41YkOEARBTrdq81WqiAxXTi6p5o8R1V0KegbYw==}
+  '@ninjaneers/nearbuy-web-components_vue@1.0.0':
+    resolution: {integrity: sha512-iVYYS3UgBgsX81MoIRgY1EEyN8rBWXPuRS0OV3VV87wHVnbMTkXLFFtAnDhLAMEG+jJRmtWc7kMUNsq2Poy/cQ==}
     peerDependencies:
       vue: ^3.0.0
 
-  '@ninjaneers/nearbuy-web-plugins@2.0.0-beta.4':
-    resolution: {integrity: sha512-+9XblcVsrw+l2fDs2fExT2OgeyXqPXEaEDKO9gW1WsiiMkiXskwuI0eGU1Me27LbuYWJMp7tR4B+zXV91IayAA==}
+  '@ninjaneers/nearbuy-web-plugins@2.0.0':
+    resolution: {integrity: sha512-2jV7fgkqD74OQ6hO387PQ6W0XugGI1HIdCnYG9L3eTj8YvJJ3MPTFeSuwvj1SvupjAacvZ/2t1lm4wwXnUIf9g==}
 
   '@node-rs/argon2-android-arm-eabi@1.7.0':
     resolution: {integrity: sha512-udDqkr5P9E+wYX1SZwAVPdyfYvaF4ry9Tm+R9LkfSHbzWH0uhU6zjIwNRp7m+n4gx691rk+lqqDAIP8RLKwbhg==}
@@ -1888,8 +1888,8 @@ packages:
   '@sphinxxxx/color-conversion@2.2.2':
     resolution: {integrity: sha512-XExJS3cLqgrmNBIP3bBw6+1oQ1ksGjFh0+oClDKFYpCCqx/hlqwWO5KO/S63fzUo67SxI9dMrF0y5T/Ey7h8Zw==}
 
-  '@stencil/core@4.12.5':
-    resolution: {integrity: sha512-vSyFjY7XSEx0ufa9SebOd437CvnneaTXlCpuGDhjUDxAjGBlu6ie5qHyubobVGBth//aErc6wZPHc6W75Vp3iQ==}
+  '@stencil/core@4.18.2':
+    resolution: {integrity: sha512-GLYbzv3Bq/oUbQk3CH09zkjISANccyE5/A1C7+1JZhdnWUx1MRuWQR9/2uzSPR7kF0sdppwzXvArl7VqYCxLOQ==}
     engines: {node: '>=16.0.0', npm: '>=7.10.0'}
     hasBin: true
 
@@ -2556,6 +2556,7 @@ packages:
   are-we-there-yet@2.0.0:
     resolution: {integrity: sha512-Ci/qENmwHnsYo9xKIcUJN5LeDKdJ6R1Z1j9V/J5wyq8nh/mYPEpIKJbBZXtZjG04HiK7zV/p6Vs9952MrMeUIw==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
 
   arg@5.0.2:
     resolution: {integrity: sha512-PYjyFOLKQ9y57JvQ6QLo8dAgNqswh8M1RMJYdQduT6xbWSgK36P/Z/v+p888pM69jMMfS8Xd8F6I1kQ/I9HUGg==}
@@ -3840,6 +3841,7 @@ packages:
   gauge@3.0.2:
     resolution: {integrity: sha512-+5J6MS/5XksCuXq++uFRsnUd7Ovu1XenbeuIuNRJxYWjgQbPuFhT14lAvsWfqfAmnwluf1OwMjz39HjfLPci0Q==}
     engines: {node: '>=10'}
+    deprecated: This package is no longer supported.
 
   gensync@1.0.0-beta.2:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
@@ -5251,6 +5253,7 @@ packages:
 
   npmlog@5.0.1:
     resolution: {integrity: sha512-AqZtDUWOMKs1G/8lwylVjrdYgqA4d9nu8hc+0gzRxlDb1I10+FHBGMXs6aiQHFdCUUlqH99MUMuLfzWDNDtfxw==}
+    deprecated: This package is no longer supported.
 
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
@@ -8472,16 +8475,16 @@ snapshots:
     transitivePeerDependencies:
       - '@opentelemetry/api'
 
-  '@ninjaneers/nearbuy-web-components@1.0.0-beta.3':
+  '@ninjaneers/nearbuy-web-components@1.0.0':
     dependencies:
-      '@stencil/core': 4.12.5
+      '@stencil/core': 4.18.2
 
-  '@ninjaneers/nearbuy-web-components_vue@1.0.0-beta.3(vue@3.4.27(typescript@5.4.5))':
+  '@ninjaneers/nearbuy-web-components_vue@1.0.0(vue@3.4.27(typescript@5.4.5))':
     dependencies:
-      '@ninjaneers/nearbuy-web-components': 1.0.0-beta.3
+      '@ninjaneers/nearbuy-web-components': 1.0.0
       vue: 3.4.27(typescript@5.4.5)
 
-  '@ninjaneers/nearbuy-web-plugins@2.0.0-beta.4': {}
+  '@ninjaneers/nearbuy-web-plugins@2.0.0': {}
 
   '@node-rs/argon2-android-arm-eabi@1.7.0':
     optional: true
@@ -9804,7 +9807,7 @@ snapshots:
 
   '@sphinxxxx/color-conversion@2.2.2': {}
 
-  '@stencil/core@4.12.5': {}
+  '@stencil/core@4.18.2': {}
 
   '@stylistic/eslint-plugin-js@2.1.0(eslint@9.3.0)':
     dependencies:
