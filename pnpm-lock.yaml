@@ -49,7 +49,7 @@ importers:
     devDependencies:
       '@dargmuesli/nuxt-vio':
         specifier: 12.0.5
-        version: 12.0.5(@lezer/common@1.2.1)(@types/eslint@8.56.10)(@unhead/shared@1.9.11)(@unocss/reset@0.60.3)(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(@vue/compiler-core@3.4.27)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(h3@1.11.1)(ioredis@5.4.1)(nuxt@3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.12)(@unocss/reset@0.60.3)(better-sqlite3@11.0.0)(encoding@0.1.13)(eslint@9.3.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(ioredis@5.4.1)(optionator@0.9.4)(rollup@4.18.0)(sass@1.77.2)(stylelint@16.6.1(typescript@5.4.5))(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(playwright-core@1.44.1)(postcss@8.4.38)(prettier@3.2.5)(rollup@4.18.0)(tailwindcss@3.4.3)(typescript@5.4.5)(unhead@1.9.11)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))(webpack@5.91.0(esbuild@0.20.2))
+        version: 12.0.5(@lezer/common@1.2.1)(@types/eslint@8.56.10)(@unhead/shared@1.9.11)(@unocss/reset@0.60.3)(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(@vue/compiler-core@3.4.27)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(h3@1.11.1)(ioredis@5.4.1)(nuxt@3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.12)(@unocss/reset@0.60.3)(better-sqlite3@11.0.0)(encoding@0.1.13)(eslint@9.3.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(ioredis@5.4.1)(optionator@0.9.4)(rollup@4.18.0)(sass@1.77.2)(stylelint@16.6.1(typescript@5.4.5))(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(playwright-core@1.44.1)(postcss@8.4.38)(prettier@3.3.0)(rollup@4.18.0)(tailwindcss@3.4.3)(typescript@5.4.5)(unhead@1.9.11)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))(webpack@5.91.0(esbuild@0.20.2))
       '@lucia-auth/adapter-sqlite':
         specifier: 3.0.1
         version: 3.0.1(better-sqlite3@11.0.0)(lucia@3.2.0)
@@ -96,11 +96,11 @@ importers:
         specifier: 1.2.0
         version: 1.2.0
       prettier:
-        specifier: 3.2.5
-        version: 3.2.5
+        specifier: 3.3.0
+        version: 3.3.0
       prettier-plugin-tailwindcss:
         specifier: 0.6.1
-        version: 0.6.1(prettier@3.2.5)
+        version: 0.6.1(prettier@3.3.0)
       stylelint:
         specifier: 16.6.1
         version: 16.6.1(typescript@5.4.5)
@@ -5901,8 +5901,8 @@ packages:
       prettier-plugin-svelte:
         optional: true
 
-  prettier@3.2.5:
-    resolution: {integrity: sha512-3/GWa9aOC0YeD7LUfvOG2NiDyhOWRvt1k+rcKhOuYnMY24iiCphgneUfJDyFXd6rZCAnuLBv6UeAULtrhT/F4A==}
+  prettier@3.3.0:
+    resolution: {integrity: sha512-J9odKxERhCQ10OC2yb93583f6UnYutOeiV5i0zEDS7UGTdUt0u+y8erxl3lBKvwo/JHyyoEdXjwp4dke9oyZ/g==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -7893,7 +7893,7 @@ snapshots:
       - supports-color
       - webpack
 
-  ? '@dargmuesli/nuxt-vio@12.0.5(@lezer/common@1.2.1)(@types/eslint@8.56.10)(@unhead/shared@1.9.11)(@unocss/reset@0.60.3)(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(@vue/compiler-core@3.4.27)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(h3@1.11.1)(ioredis@5.4.1)(nuxt@3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.12)(@unocss/reset@0.60.3)(better-sqlite3@11.0.0)(encoding@0.1.13)(eslint@9.3.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(ioredis@5.4.1)(optionator@0.9.4)(rollup@4.18.0)(sass@1.77.2)(stylelint@16.6.1(typescript@5.4.5))(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(playwright-core@1.44.1)(postcss@8.4.38)(prettier@3.2.5)(rollup@4.18.0)(tailwindcss@3.4.3)(typescript@5.4.5)(unhead@1.9.11)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))(webpack@5.91.0(esbuild@0.20.2))'
+  ? '@dargmuesli/nuxt-vio@12.0.5(@lezer/common@1.2.1)(@types/eslint@8.56.10)(@unhead/shared@1.9.11)(@unocss/reset@0.60.3)(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(@vue/compiler-core@3.4.27)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(h3@1.11.1)(ioredis@5.4.1)(nuxt@3.11.2(@opentelemetry/api@1.8.0)(@parcel/watcher@2.4.1)(@types/node@20.12.12)(@unocss/reset@0.60.3)(better-sqlite3@11.0.0)(encoding@0.1.13)(eslint@9.3.0)(floating-vue@5.2.2(@nuxt/kit@3.11.2(rollup@4.18.0))(vue@3.4.27(typescript@5.4.5)))(fuse.js@7.0.0)(ioredis@5.4.1)(optionator@0.9.4)(rollup@4.18.0)(sass@1.77.2)(stylelint@16.6.1(typescript@5.4.5))(terser@5.31.0)(typescript@5.4.5)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(playwright-core@1.44.1)(postcss@8.4.38)(prettier@3.3.0)(rollup@4.18.0)(tailwindcss@3.4.3)(typescript@5.4.5)(unhead@1.9.11)(unocss@0.60.3(@unocss/webpack@0.60.3(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2)))(postcss@8.4.38)(rollup@4.18.0)(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0)))(vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)(terser@5.31.0))(vue-router@4.3.2(vue@3.4.27(typescript@5.4.5)))(vue@3.4.27(typescript@5.4.5))(webpack@5.91.0(esbuild@0.20.2))'
   : dependencies:
       '@dargmuesli/nuxt-cookie-control': 8.3.4(rollup@4.18.0)(webpack@5.91.0(esbuild@0.20.2))
       '@heroicons/vue': 2.1.3(vue@3.4.27(typescript@5.4.5))
@@ -7919,7 +7919,7 @@ snapshots:
       eslint: 9.3.0
       eslint-config-prettier: 9.1.0(eslint@9.3.0)
       eslint-plugin-compat: 4.2.0(eslint@9.3.0)
-      eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.3.0))(eslint@9.3.0)(prettier@3.2.5)
+      eslint-plugin-prettier: 5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.3.0))(eslint@9.3.0)(prettier@3.3.0)
       eslint-plugin-yml: 1.14.0(eslint@9.3.0)
       globals: 15.3.0
       jose: 5.3.0
@@ -9085,7 +9085,7 @@ snapshots:
       html-validate: 8.18.2
       knitwork: 1.1.0
       pathe: 1.1.2
-      prettier: 3.2.5
+      prettier: 3.3.0
       std-env: 3.7.0
     transitivePeerDependencies:
       - jest
@@ -11847,10 +11847,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.3.0))(eslint@9.3.0)(prettier@3.2.5):
+  eslint-plugin-prettier@5.1.3(@types/eslint@8.56.10)(eslint-config-prettier@9.1.0(eslint@9.3.0))(eslint@9.3.0)(prettier@3.3.0):
     dependencies:
       eslint: 9.3.0
-      prettier: 3.2.5
+      prettier: 3.3.0
       prettier-linter-helpers: 1.0.0
       synckit: 0.8.8
     optionalDependencies:
@@ -14699,11 +14699,11 @@ snapshots:
     dependencies:
       fast-diff: 1.3.0
 
-  prettier-plugin-tailwindcss@0.6.1(prettier@3.2.5):
+  prettier-plugin-tailwindcss@0.6.1(prettier@3.3.0):
     dependencies:
-      prettier: 3.2.5
+      prettier: 3.3.0
 
-  prettier@3.2.5: {}
+  prettier@3.3.0: {}
 
   pretty-bytes@6.1.1: {}
 
