@@ -20,6 +20,11 @@ export default defineNuxtConfig({
       },
     },
   },
+  vite: {
+    optimizeDeps: {
+      include: ['oslo/jwt'],
+    },
+  },
   vue: {
     compilerOptions: {
       isCustomElement: (tag: string) => tag.startsWith('nb-'),

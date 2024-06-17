@@ -51,7 +51,7 @@ RUN pnpm install --offline
 FROM prepare AS build-node
 
 ENV NODE_ENV=production
-RUN pnpm run build:node
+RUN pnpm --dir src run build:node
 
 
 ########################
