@@ -39,6 +39,11 @@ export default defineNuxtConfig({
   },
 
   // modules
+  eslint: {
+    config: {
+      typescript: true,
+    },
+  },
   i18n: {
     defaultLocale: 'de', // Must be set for the default prefix_except_default prefix strategy.
     detectBrowserLanguage: false,
