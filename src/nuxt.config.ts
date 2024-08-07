@@ -20,6 +20,13 @@ export default defineNuxtConfig({
       },
     },
   },
+  typescript: {
+    tsConfig: {
+      vueCompilerOptions: {
+        htmlAttributes: [], // https://github.com/johnsoncodehk/volar/issues/1970#issuecomment-1276994634
+      },
+    },
+  },
   vite: {
     optimizeDeps: {
       include: ['oslo/jwt'],
