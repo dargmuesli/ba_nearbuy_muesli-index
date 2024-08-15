@@ -25,7 +25,7 @@
     "stylelint-no-unsupported-browser-features": "8.0.1",
     "tailwindcss": "3.4.10",
     "unhead": "1.9.16",
-    "vue": "3.4.37",
+    "vue": "3.4.38",
     "vue-router": "4.4.3"
   },
   "engines": {
