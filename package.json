@@ -26,5 +26,11 @@
     "start:node": "node src/.output/server/index.mjs",
     "start:static": "pnpm --dir src exec serve .output/public"
   },
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "overrides": {
+      "caniuse-lite": "1.0.30001653",
+      "doiuse": "6.0.2"
+    }
+  }
 }
