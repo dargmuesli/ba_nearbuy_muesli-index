@@ -56,7 +56,7 @@ importers:
         version: 14.0.7(h3@1.13.0)(ioredis@5.4.1)(magicast@0.3.5)(nuxt@3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.5)(better-sqlite3@11.4.0)(eslint@9.12.0(jiti@2.3.3))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.0)(stylelint@16.10.0(typescript@5.6.3))(terser@5.34.1)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5)(terser@5.34.1))(vue-tsc@2.1.6(typescript@5.6.3))(webpack-sources@3.2.3))(prettier@3.3.3)(rollup@4.24.0)(tailwindcss@3.4.14)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5)(terser@5.34.1))(vue-router@4.4.5(vue@3.5.12(typescript@5.6.3)))(vue@3.5.12(typescript@5.6.3))(webpack-sources@3.2.3)(webpack@5.95.0(esbuild@0.21.5))
       '@lucia-auth/adapter-sqlite':
         specifier: 3.0.2
-        version: 3.0.2(better-sqlite3@11.4.0)(lucia@3.2.1)
+        version: 3.0.2(better-sqlite3@11.4.0)(lucia@3.2.2)
       '@ninjaneers/nearbuy-web-components':
         specifier: 1.0.1
         version: 1.0.1
@@ -91,8 +91,8 @@ importers:
         specifier: 1.13.0
         version: 1.13.0
       lucia:
-        specifier: 3.2.1
-        version: 3.2.1
+        specifier: 3.2.2
+        version: 3.2.2
       nuxt:
         specifier: 3.13.2
         version: 3.13.2(@parcel/watcher@2.4.1)(@types/node@22.7.5)(better-sqlite3@11.4.0)(eslint@9.12.0(jiti@2.3.3))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.24.0)(stylelint@16.10.0(typescript@5.6.3))(terser@5.34.1)(typescript@5.6.3)(vite@5.4.8(@types/node@22.7.5)(terser@5.34.1))(vue-tsc@2.1.6(typescript@5.6.3))(webpack-sources@3.2.3)
@@ -4414,8 +4414,8 @@ packages:
   lru-cache@5.1.1:
     resolution: {integrity: sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==}
 
-  lucia@3.2.1:
-    resolution: {integrity: sha512-yIVBS/wU3R+8cLClh2ksBNxqHkAd0VUcjvib53azkSdRT1cPkKuFglkxFsghuspaioX+AHhmIECEkdOz/vIJsQ==}
+  lucia@3.2.2:
+    resolution: {integrity: sha512-P1FlFBGCMPMXu+EGdVD9W4Mjm0DqsusmKgO7Xc33mI5X1bklmsQb0hfzPhXomQr9waWIBDsiOjvr1e6BTaUqpA==}
 
   magic-string-ast@0.6.2:
     resolution: {integrity: sha512-oN3Bcd7ZVt+0VGEs7402qR/tjgjbM7kPlH/z7ufJnzTLVBzXJITRHOJiwMmmYMgZfdoWQsfQcY+iKlxiBppnMA==}
@@ -7730,9 +7730,9 @@ snapshots:
 
   '@kwsites/promise-deferred@1.1.1': {}
 
-  '@lucia-auth/adapter-sqlite@3.0.2(better-sqlite3@11.4.0)(lucia@3.2.1)':
+  '@lucia-auth/adapter-sqlite@3.0.2(better-sqlite3@11.4.0)(lucia@3.2.2)':
     dependencies:
-      lucia: 3.2.1
+      lucia: 3.2.2
     optionalDependencies:
       better-sqlite3: 11.4.0
 
@@ -11799,7 +11799,7 @@ snapshots:
     dependencies:
       yallist: 3.1.1
 
-  lucia@3.2.1:
+  lucia@3.2.2:
     dependencies:
       '@oslojs/crypto': 1.0.1
       '@oslojs/encoding': 1.1.0
