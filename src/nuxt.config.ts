@@ -1,6 +1,7 @@
 import { LOCALES } from './utils/constants'
 
 export default defineNuxtConfig({
+  compatibilityDate: '2024-04-03',
   modules: [
     '@nuxt/eslint',
     '@nuxtjs/tailwindcss',
