@@ -1,5 +1,5 @@
 import { BetterSqlite3Adapter } from '@lucia-auth/adapter-sqlite'
-import { Keycloak } from 'arctic'
+import { KeyCloak } from 'arctic'
 import { Lucia } from 'lucia'
 
 import { db, type DatabaseSession, type DatabaseUser } from './db'
@@ -29,7 +29,7 @@ export const lucia = new Lucia(adapter, {
 
 const runtimeConfig = useRuntimeConfig()
 
-export const keycloak = new Keycloak(
+export const keycloak = new KeyCloak(
   runtimeConfig.nearbuy.keycloak.realmUri,
   'plugin_muesli-index_public',
   '', // TODO

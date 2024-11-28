@@ -1,12 +1,12 @@
 export const LOCALES = [
   {
-    code: 'en',
-    name: 'English',
-    iso: 'en', // Will be used as catchall locale by default.
+    code: 'de',
+    language: 'de',
+    name: 'Deutsch',
   },
   {
-    code: 'de',
-    name: 'Deutsch',
-    iso: 'de',
+    code: 'en',
+    language: 'en', // Will be used as catchall locale by default.
+    name: 'English',
   },
 ]
