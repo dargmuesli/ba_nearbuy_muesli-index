@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     nearbuy: {
       keycloak: {
-        realmUri: 'https://auth.nearbuy-food.de/auth/realms/nearbuy-staging',
+        realmUri: 'https://auth.staging.nearbuy-food.de/realms/nearbuy',
         redirectUri: 'http://localhost:3001/login/keycloak/callback',
       },
     },

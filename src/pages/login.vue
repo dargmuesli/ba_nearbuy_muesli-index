@@ -29,7 +29,7 @@ const logIn = async (e: CustomEvent<string>, options?: LogInOptions) => {
     {
       path: '/login/keycloak',
       query: options?.isWritable
-        ? { scope: 'openid profile email offer-write' }
+        ? { scope: 'openid profile email nearbuy-offer-write' }
         : undefined,
     },
     { external: true },

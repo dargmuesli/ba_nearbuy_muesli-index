@@ -1,4 +1,4 @@
-import { OAuth2RequestError } from 'arctic'
+import { ArcticFetchError, OAuth2RequestError } from 'arctic'
 import { parseJWT } from 'oslo/jwt'
 
 // type KeycloakUser = {
@@ -46,10 +46,10 @@ export default defineEventHandler(async (event) => {
 
   try {
     const tokens = await keycloak.validateAuthorizationCode(code, codeVerifier)
-    const id = parseJWT(tokens.idToken)
-    // console.log(parseJWT(tokens.accessToken)!.payload)
-    // console.log(parseJWT(tokens.idToken)!.payload)
-    // console.log(parseJWT(tokens.refreshToken ?? '')!.payload)
+    const id = parseJWT(tokens.idToken())
+    // console.log(parseJWT(tokens.accessToken())!.payload)
+    // console.log(parseJWT(tokens.idToken())!.payload)
+    // console.log(parseJWT(tokens.refreshToken() ?? '')!.payload)
 
     if (!id || !id.subject) {
       throw createError({
@@ -64,11 +64,17 @@ export default defineEventHandler(async (event) => {
 
     if (existingUser) {
       const session = await lucia.createSession(id.subject, {
-        access_token: tokens.accessToken,
-        access_token_expires_at: tokens.accessTokenExpiresAt.getTime(),
-        id_token: tokens.idToken,
-        refresh_token: tokens.refreshToken || undefined,
-        refresh_token_expires_at: tokens.refreshTokenExpiresAt?.getTime(),
+        access_token: tokens.accessToken(),
+        access_token_expires_at: tokens.accessTokenExpiresAt().getTime(),
+        id_token: tokens.idToken(),
+        refresh_token: tokens.refreshToken() || undefined,
+        refresh_token_expires_at:
+          'refresh_expires_in' in tokens.data &&
+          typeof tokens.data.refresh_expires_in === 'number'
+            ? new Date(
+                Date.now() + tokens.data.refresh_expires_in * 1000,
+              ).getTime()
+            : undefined,
       })
       appendHeader(
         event,
@@ -82,11 +88,17 @@ export default defineEventHandler(async (event) => {
     db.prepare(`INSERT INTO user VALUES (?)`).run(id.subject)
 
     const session = await lucia.createSession(id.subject, {
-      access_token: tokens.accessToken,
-      access_token_expires_at: tokens.accessTokenExpiresAt.getTime(),
-      id_token: tokens.idToken,
-      refresh_token: tokens.refreshToken || undefined,
-      refresh_token_expires_at: tokens.refreshTokenExpiresAt?.getTime(),
+      access_token: tokens.accessToken(),
+      access_token_expires_at: tokens.accessTokenExpiresAt().getTime(),
+      id_token: tokens.idToken(),
+      refresh_token: tokens.refreshToken() || undefined,
+      refresh_token_expires_at:
+        'refresh_expires_in' in tokens.data &&
+        typeof tokens.data.refresh_expires_in === 'number'
+          ? new Date(
+              Date.now() + tokens.data.refresh_expires_in * 1000,
+            ).getTime()
+          : undefined,
     })
     appendHeader(
       event,
@@ -99,6 +111,13 @@ export default defineEventHandler(async (event) => {
       throw createError({
         ...e,
         statusCode: 400,
+      })
+    }
+
+    if (e instanceof ArcticFetchError) {
+      throw createError({
+        ...e,
+        statusCode: 500,
       })
     }
 

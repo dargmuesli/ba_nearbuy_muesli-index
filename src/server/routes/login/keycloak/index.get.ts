@@ -4,13 +4,13 @@ export default defineEventHandler(async (event) => {
   const query = getQuery(event)
   const state = generateState()
   const codeVerifier = generateCodeVerifier()
-  const url = await keycloak.createAuthorizationURL(state, codeVerifier, {
-    ...(query.scope && typeof query.scope === 'string'
-      ? { scopes: query.scope.split(' ') }
-      : {
-          /* scopes: ['openid', 'profile', 'email'] */
-        }),
-  })
+  const url = keycloak.createAuthorizationURL(
+    state,
+    codeVerifier,
+    query.scope && typeof query.scope === 'string'
+      ? query.scope.split(' ')
+      : ['openid', 'profile', 'email'],
+  )
 
   setCookie(event, 'keycloak_oauth_state', state, {
     path: '/',
