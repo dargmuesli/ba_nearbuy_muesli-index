@@ -9,24 +9,12 @@ export default withNuxt(
       'vue-i18n': {
         localeDir: [
           {
-            pattern: './locales/*.json',
-          },
-          {
-            pattern: './node_modules/@dargmuesli/nuxt-vio/locales/*.json',
+            pattern: './node_modules/@dargmuesli/nuxt-vio/i18n/locales/*.json',
           },
         ],
       },
     },
   },
-  {
-    ignores: ['gql/generated/**/*'],
-  },
-  {
-    files: ['locales/**/*'],
-    rules: {
-      '@intlify/vue-i18n/no-duplicate-keys-in-locale': 'off',
-    },
-  }, // TODO: remove once `@intlify/vue-i18n/no-duplicate-keys-in-locale` is checked across layers
   {
     rules: {
       'vue/v-on-event-hyphenation': 'off',
