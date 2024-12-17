@@ -78,8 +78,8 @@ importers:
         specifier: 7.6.12
         version: 7.6.12
       arctic:
-        specifier: 2.3.2
-        version: 2.3.2
+        specifier: 2.3.3
+        version: 2.3.3
       better-sqlite3:
         specifier: 11.7.0
         version: 11.7.0
@@ -2298,8 +2298,8 @@ packages:
     resolution: {integrity: sha512-ZcbTaIqJOfCc03QwD468Unz/5Ir8ATtvAHsK+FdXbDIbGfihqh9mrvdcYunQzqn4HrvWWaFyaxJhGZagaJJpPQ==}
     engines: {node: '>= 14'}
 
-  arctic@2.3.2:
-    resolution: {integrity: sha512-soUbxjMjmRRWTyFn9eoJ3PMCjjlLC6ivZ8NZ+ci2erpmkRv+YBPhY1bKTbmIBnDy29sc0LQNXaMxAtQwjQNazg==}
+  arctic@2.3.3:
+    resolution: {integrity: sha512-f42+wyM0LKNwUY0TV3fSH1Fnsr/klcZi42XfWFvlNP7Ag8aBX92FaKQIU5xBQzxvvy7jg02tF567LsIlmEujKg==}
 
   are-docs-informative@0.0.2:
     resolution: {integrity: sha512-ixiS0nLNNG5jNQzgZJNoUpBKdo9yTYZMGJ+QgT2jmjR7G7+QHRCc4v6LQ3NgE7EBJq+o0ams3waJwkrlBom8Ig==}
@@ -9482,7 +9482,7 @@ snapshots:
       tar-stream: 3.1.7
       zip-stream: 6.0.1
 
-  arctic@2.3.2:
+  arctic@2.3.3:
     dependencies:
       '@oslojs/crypto': 1.0.1
       '@oslojs/encoding': 1.1.0
