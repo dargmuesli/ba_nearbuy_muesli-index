@@ -26,10 +26,5 @@
     "start:node": "node src/.output/server/index.mjs",
     "start:static": "pnpm --dir src exec serve .output/public"
   },
-  "type": "module",
-  "pnpm": {
-    "overrides": {
-      "typescript": "5.6.3"
-    }
-  }
+  "type": "module"
 }
