@@ -66,10 +66,12 @@ const userSession = useUserSession()
 // computations
 const name = computed(() => {
   const idTokenPayload = userSession.value
-    ? (parseJWT(userSession.value.idToken)?.payload as { name: string })
+    ? (parseJWT(userSession.value.idToken)?.payload as {
+        preferred_username: string
+      })
     : undefined
 
-  return idTokenPayload?.name
+  return idTokenPayload?.preferred_username
 })
 const permission = computed(() => {
   const accessTokenPayload = userSession.value
