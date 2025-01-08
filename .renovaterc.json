@@ -2,20 +2,5 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "github>dargmuesli/renovate-config"
-  ],
-  "hostRules": [
-    {
-      "matchHost": "https://gitlab.com/",
-      "hostType": "npm",
-      "encrypted": {
-        "token": "wcFMA/xDdHCJBTolAQ//eHWJv7LFwcO98nzySn4CnGDyVWdW+K2zMi8j5M4EPD8yICGjUIgr7Iu87DzfuJV7dqhq8MkhGCT6ZzXG0kFmlYjLotjk/TdcXkwqqRzH2Q7kW+mZKtZBalNLjsVDgNZOErelob83borjoOymKBRVtPIuMaQ12CbVGg/DvoqIIbU8ihGyCUJIP7AQb+H3mRcpn94gumrwbQo0csBkPL8XsgPP4L8iHHyKYEndWs6pVoVtpLbuOLeNoTABC01TqVdGVw0PA1BPefd+uZt7AxNOXYwy171t9bhU9Gs8Fc4XRe3SbGjmo07lC5khod/zDkJMb7P43UqdZzxJf3/qDt1eehNqqGtGXwWIOHkMAVkTWD/l+thA+84udrHgbC3r+R5sinuvwF9NTUdp2X1VbB6Xar4BSNjO5DBOV6DAwQghpIAAlyMPPma2XSHiA55bAM9I9azO2xnPcSKZv9KeQIC+xYgJCy/XSc+ndGP2xnOhgsCCi2nYpD8ANGa0wyqGCXfzS4fHPm6cW2Snla6wSIWhZVCOzi8kkUPx0Tu7w25Akipff7vWOAVBHrjcHuzZ9WfX9xAFrZosG3vHCiejE8lqFghz69uFPTv7MCjHYwV3YEZIsEeQX8PRjFpFBaT0KM4XZUROApUeeHxWdGUYN8LRBSy2TxZZ7cMJnqgkaDmearfSggHgAzIAUxIzL0d35f6i4rVKDypv0ozP0YlFq81sSjVkWkXC45HjfiVD5JYdDMM9qGT6emUp52fFTuw/uVqB7pIFTvoH+Ktn9S5IyKqGVG2kVEOthKAyUP37wv9CtOnVTXbDWSpWwdelgweZPM4E4jT1KTMh/C2mAgq/H9TDr60Hph4"
-      }
-    }
-  ],
-  "packageRules": [
-    {
-      "matchPackageNames": ["typescript"],
-      "allowedVersions": "5.6.3"
-    }
   ]
 }
