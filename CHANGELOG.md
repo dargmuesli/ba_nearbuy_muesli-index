@@ -1,3 +1,9 @@
+## [0.4.26](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.25...0.4.26) (2025-01-08)
+
+### Bug Fixes
+
+* **session:** correct username getter ([0a91b8e](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/0a91b8ed403fe3d6579bf4c576af148ae4146987))
+
 ## [0.4.25](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.24...0.4.25) (2025-01-06)
 
 ### Bug Fixes
