@@ -9,8 +9,8 @@ nb-button::part(nb-button) {
 }
 
 body.theme-muesli-index nb-button::part(nb-button) {
-  /* doiuse-disable css-nesting */
-  @apply rounded normal-case; /* doiuse-enable css-nesting */
+  border-radius: 0.25rem; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+  text-transform: none;
 }
 
 body.theme-muesli-index nb-button[secondary]::part(nb-button):hover {
