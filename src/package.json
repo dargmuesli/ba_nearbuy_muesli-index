@@ -11,7 +11,7 @@
     "@nuxtjs/tailwindcss": "6.13.1",
     "@types/better-sqlite3": "7.6.12",
     "arctic": "3.1.2",
-    "better-sqlite3": "11.7.2",
+    "better-sqlite3": "11.8.0",
     "consola": "3.4.0",
     "h3": "1.13.1",
     "lucia": "3.2.2",
