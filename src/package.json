@@ -1,7 +1,7 @@
 {
   "description": "Calculates the 'Muesli index', representing the availability of ingredients required for a yummy muesli. Requests for missing ingredients can be added with one click.",
   "devDependencies": {
-    "@dargmuesli/nuxt-vio": "16.0.3",
+    "@dargmuesli/nuxt-vio": "16.0.4",
     "@lucia-auth/adapter-sqlite": "3.0.2",
     "@ninjaneers/nearbuy-web-components": "1.0.1",
     "@ninjaneers/nearbuy-web-components_vue": "1.0.1",
@@ -10,7 +10,7 @@
     "@nuxtjs/seo": "2.1.1",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@types/better-sqlite3": "7.6.12",
-    "arctic": "3.2.1",
+    "arctic": "3.2.2",
     "better-sqlite3": "11.8.1",
     "consola": "3.4.0",
     "h3": "1.14.0",
