@@ -36,7 +36,7 @@ EXPOSE 3001
 
 FROM base-image AS prepare
 
-COPY ./pnpm-lock.yaml ./
+COPY ./pnpm-lock.yaml package.json ./
 
 RUN pnpm fetch
 
