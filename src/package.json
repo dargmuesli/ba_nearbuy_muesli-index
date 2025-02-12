@@ -10,7 +10,7 @@
     "@nuxtjs/seo": "2.1.1",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@types/better-sqlite3": "7.6.12",
-    "arctic": "3.2.4",
+    "arctic": "3.3.0",
     "better-sqlite3": "11.8.1",
     "consola": "3.4.0",
     "eslint": "9.20.1",
