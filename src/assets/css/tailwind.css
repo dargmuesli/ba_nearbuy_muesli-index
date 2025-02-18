@@ -1,8 +1,6 @@
-/* stylelint-disable at-rule-no-unknown */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/* stylelint-enable at-rule-no-unknown */
+/* stylelint-disable import-notation */
+
+@import 'tailwindcss';
 
 nb-button::part(nb-button) {
   font-weight: normal;

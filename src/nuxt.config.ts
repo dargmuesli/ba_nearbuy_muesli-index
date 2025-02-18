@@ -1,13 +1,11 @@
+import tailwindcss from '@tailwindcss/vite'
+
 import { LOCALES } from './utils/constants'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  modules: [
-    '@nuxt/eslint',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/i18n',
-    '@nuxtjs/seo',
-  ],
+  css: ['~/assets/css/tailwind.css'],
+  modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxtjs/seo'],
   nitro: {
     experimental: {
       database: true,
@@ -32,6 +30,7 @@ export default defineNuxtConfig({
     optimizeDeps: {
       include: ['oslo/jwt'],
     },
+    plugins: [tailwindcss()],
   },
   vue: {
     compilerOptions: {
