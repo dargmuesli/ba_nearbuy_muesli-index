@@ -48,8 +48,8 @@ importers:
   src:
     devDependencies:
       '@dargmuesli/nuxt-vio':
-        specifier: 17.0.1
-        version: 17.0.1(0730094d6d2a473a7fa925b9122bdc6d)
+        specifier: 17.0.2
+        version: 17.0.2(0730094d6d2a473a7fa925b9122bdc6d)
       '@lucia-auth/adapter-sqlite':
         specifier: 3.0.2
         version: 3.0.2(better-sqlite3@11.8.1)(lucia@3.2.2)
@@ -410,8 +410,8 @@ packages:
     resolution: {integrity: sha512-n7yiY5tfxsu1j1xpAcPiGFCrngB8QgkW7u9z/OWfuJZv8YeiZ4QhdgEmPOuTOy7qkzhszWdF3dVgzbQtLw+i2Q==}
     engines: {node: '>=16'}
 
-  '@dargmuesli/nuxt-vio@17.0.1':
-    resolution: {integrity: sha512-KbsQPvYvDQfV9DFIqjf5Jc9hhblh0/jcyxR3D+dU/8aFmRc9u7dyzrief4m1E5c6swA2k/gCjtOF6c+A8ZIWVQ==}
+  '@dargmuesli/nuxt-vio@17.0.2':
+    resolution: {integrity: sha512-0al2e3yWUpOYQUwmvtqoEQ2PTaDoTYLdgd3OnV4mba4FUycTW30bFg3FY7PWUOnldYHHCWfmSFQ0ByCADR0cEg==}
     engines: {node: '22'}
     peerDependencies:
       nuxt: 3.15.4
@@ -6906,7 +6906,7 @@ snapshots:
       - supports-color
       - webpack
 
-  '@dargmuesli/nuxt-vio@17.0.1(0730094d6d2a473a7fa925b9122bdc6d)':
+  '@dargmuesli/nuxt-vio@17.0.2(0730094d6d2a473a7fa925b9122bdc6d)':
     dependencies:
       '@dargmuesli/nuxt-cookie-control': 8.5.2(magicast@0.3.5)(webpack@5.98.0(esbuild@0.24.2))
       '@eslint/compat': 1.2.7(eslint@9.21.0(jiti@2.4.2))
