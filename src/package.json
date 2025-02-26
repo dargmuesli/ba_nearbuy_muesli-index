@@ -10,7 +10,7 @@
     "@nuxtjs/seo": "2.2.0",
     "@tailwindcss/vite": "4.0.9",
     "@types/better-sqlite3": "7.6.12",
-    "arctic": "3.3.0",
+    "arctic": "3.4.0",
     "better-sqlite3": "11.8.1",
     "consola": "3.4.0",
     "eslint": "9.21.0",
@@ -25,7 +25,7 @@
     "stylelint-config-standard": "37.0.0",
     "stylelint-no-unsupported-browser-features": "8.0.4",
     "tailwindcss": "4.0.9",
-    "unhead": "1.11.19",
+    "unhead": "1.11.20",
     "vue": "3.5.13",
     "vue-router": "4.5.0"
   },
