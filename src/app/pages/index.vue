@@ -68,7 +68,7 @@ const read = async () => {
     const employments = await nearbuyFetch<{ links: { company: 'string' } }[]>(
       `persons/${trimId(me.links.self)}/employments`,
     )
-    if (!employments || employments.length === 0) {
+    if (!employments || !employments[0]) {
       isLoading.value = false
       return consola.error('There is no employment!')
     }
@@ -130,6 +130,8 @@ const write = async () => {
       `persons/${trimId(me.links.self)}/employments`,
     )
   )[0]
+
+  if (!employment) return
 
   const companyContacts = await nearbuyFetch<string[]>(
     `companies/${trimId(employment.links.company)}/contacts`,

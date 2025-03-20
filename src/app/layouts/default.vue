@@ -85,8 +85,8 @@ const permission = computed(() => {
 onMounted(() => {
   const radios = document.querySelectorAll('input[type=radio]')
 
-  for (let i = 0; i < radios.length; i++) {
-    radios[i].addEventListener('change', function (event: InputEvent) {
+  for (const radio of radios) {
+    radio.addEventListener('change', function (event: InputEvent) {
       if ((event.target as HTMLInputElement).value === 'nearbuy') {
         document.body.style.removeProperty('--nb-color-primary')
         document.body.classList.remove('theme-muesli-index')
