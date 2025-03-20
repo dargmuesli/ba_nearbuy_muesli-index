@@ -1,10 +1,13 @@
 import tailwindcss from '@tailwindcss/vite'
 
-import { LOCALES } from './utils/constants'
+import { LOCALES } from './shared/utils/constants'
 
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/nearbuy-muesli-index.css'],
+  future: {
+    compatibilityVersion: 4,
+  },
   modules: ['@nuxt/eslint', '@nuxtjs/i18n', '@nuxtjs/seo'],
   nitro: {
     experimental: {
