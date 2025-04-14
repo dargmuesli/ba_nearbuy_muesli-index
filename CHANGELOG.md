@@ -1,3 +1,9 @@
+## [0.4.33](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.32...0.4.33) (2025-04-14)
+
+### Bug Fixes
+
+* schedule release ([7265fd9](https://github.com/dargmuesli/ba_nearbuy_muesli-index/commit/7265fd98f3be8abeb62f8b0088a2f66583ae925d))
+
 ## [0.4.32](https://github.com/dargmuesli/ba_nearbuy_muesli-index/compare/0.4.31...0.4.32) (2025-03-31)
 
 ### Bug Fixes
