@@ -16,7 +16,7 @@
     "eslint": "9.25.1",
     "h3": "1.15.2",
     "lucia": "3.2.2",
-    "nuxt": "3.16.2",
+    "nuxt": "3.17.0",
     "oslo": "1.2.1",
     "prettier": "3.5.3",
     "prettier-plugin-tailwindcss": "0.6.11",
