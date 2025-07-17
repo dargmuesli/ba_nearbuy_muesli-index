@@ -1,30 +1,29 @@
-import { ArcticFetchError, OAuth2RequestError } from 'arctic'
-import { parseJWT } from 'oslo/jwt'
+import { decodeIdToken, ArcticFetchError, OAuth2RequestError } from 'arctic'
 
-// type KeycloakUser = {
-//   exp: number
-//   iat: number
-//   auth_time: number
-//   jti: string
-//   iss: string
-//   aud: string
-//   sub: string
-//   typ: string
-//   azp: string
-//   session_state: string
-//   at_hash: string
-//   acr: string
-//   sid: string
-//   email_verified: boolean
-//   name: string
-//   preferred_username: string
-//   given_name: string
-//   locale: string
-//   family_name: string
-//   email: string
-//   picture: string
-//   user: any
-// }
+type KeycloakUser = {
+  acr: string
+  at_hash: string
+  aud: string
+  auth_time: number
+  azp: string
+  email_verified: boolean
+  email: string
+  exp: number
+  // family_name: string
+  // given_name: string
+  iat: number
+  iss: string
+  jti: string
+  // locale: string
+  // name: string
+  // picture: string
+  preferred_username: string
+  session_state: string
+  sid: string
+  sub: string
+  typ: string
+  // user: any
+}
 
 export default defineEventHandler(async (event) => {
   const query = getQuery(event)
@@ -46,12 +45,12 @@ export default defineEventHandler(async (event) => {
 
   try {
     const tokens = await keycloak.validateAuthorizationCode(code, codeVerifier)
-    const id = parseJWT(tokens.idToken())
-    // console.log(parseJWT(tokens.accessToken())!.payload)
-    // console.log(parseJWT(tokens.idToken())!.payload)
-    // console.log(parseJWT(tokens.refreshToken() ?? '')!.payload)
+    const claims = decodeIdToken(tokens.idToken()) as KeycloakUser
+    // console.log(decodeIdToken(tokens.accessToken()))
+    // console.log(decodeIdToken(tokens.idToken()))
+    // console.log(decodeIdToken(tokens.refreshToken() ?? ''))
 
-    if (!id || !id.subject) {
+    if (!claims || !claims.sub) {
       throw createError({
         message: '`id` token or subject missing!',
         statusCode: 500,
@@ -60,10 +59,10 @@ export default defineEventHandler(async (event) => {
 
     const existingUser = db
       .prepare(`SELECT id FROM user WHERE id = ?`)
-      .get(id.subject)
+      .get(claims.sub)
 
     if (existingUser) {
-      const session = await lucia.createSession(id.subject, {
+      const session = await lucia.createSession(claims.sub, {
         access_token: tokens.accessToken(),
         access_token_expires_at: tokens.accessTokenExpiresAt().getTime(),
         id_token: tokens.idToken(),
@@ -85,9 +84,9 @@ export default defineEventHandler(async (event) => {
     }
 
     // Replace this with your own DB client.
-    db.prepare(`INSERT INTO user VALUES (?)`).run(id.subject)
+    db.prepare(`INSERT INTO user VALUES (?)`).run(claims.sub)
 
-    const session = await lucia.createSession(id.subject, {
+    const session = await lucia.createSession(claims.sub, {
       access_token: tokens.accessToken(),
       access_token_expires_at: tokens.accessTokenExpiresAt().getTime(),
       id_token: tokens.idToken(),

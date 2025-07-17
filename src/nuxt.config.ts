@@ -31,7 +31,12 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      include: ['oslo/jwt'],
+      include: [
+        'arctic',
+        '@intlify/core-base',
+        '@intlify/shared',
+        '@ninjaneers/nearbuy-web-components_vue',
+      ],
     },
     plugins: [tailwindcss()],
   },
