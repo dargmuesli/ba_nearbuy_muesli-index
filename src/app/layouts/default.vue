@@ -56,32 +56,30 @@
 </template>
 
 <script setup lang="ts">
-import { parseJWT } from 'oslo/jwt'
+import { decodeIdToken } from 'arctic'
 
-const { t } = useI18n()
-const route = useRoute()
-const user = useUser()
+// authentication
 const userSession = useUserSession()
-
-// computations
 const name = computed(() => {
-  const idTokenPayload = userSession.value
-    ? (parseJWT(userSession.value.idToken)?.payload as {
-        preferred_username: string
-      })
-    : undefined
+  if (!userSession.value) return
 
-  return idTokenPayload?.preferred_username
+  const claims = decodeIdToken(userSession.value.idToken) as {
+    preferred_username: string
+  }
+
+  return claims.preferred_username
 })
 const permission = computed(() => {
-  const accessTokenPayload = userSession.value
-    ? (parseJWT(userSession.value.accessToken)?.payload as { scope: string })
-    : undefined
+  if (!userSession.value) return
 
-  return accessTokenPayload?.scope.includes('offer-write') ? 'write' : 'read'
+  const claims = decodeIdToken(userSession.value.accessToken) as {
+    scope: string
+  }
+
+  return claims.scope.includes('nearbuy-offer-write') ? 'write' : 'read'
 })
 
-// lifecycle
+// style
 onMounted(() => {
   const radios = document.querySelectorAll('input[type=radio]')
 
@@ -101,60 +99,55 @@ onMounted(() => {
   }
 })
 
-useServerHeadSafe({
-  link: [
-    {
-      href: '/assets/static/favicon/apple-touch-icon.png?v=0.0.0',
-      rel: 'apple-touch-icon',
-      sizes: '180x180',
-    },
-    {
-      href: '/assets/static/favicon/favicon-16x16.png?v=0.0.0',
-      rel: 'icon',
-      sizes: '16x16',
-      type: 'image/png',
-    },
-    {
-      href: '/assets/static/favicon/favicon-32x32.png?v=0.0.0',
-      rel: 'icon',
-      sizes: '32x32',
-      type: 'image/png',
-    },
-    {
-      href: '/assets/static/favicon/favicon.ico',
-      rel: 'icon',
-      type: 'image/x-icon',
-    },
-    {
-      href: '/assets/static/favicon/site.webmanifest?v=0.0.0',
-      rel: 'manifest',
-    },
-    {
-      color: '#ee976e',
-      href: '/assets/static/favicon/safari-pinned-tab.svg?v=0.0.0',
-      rel: 'mask-icon',
-    },
-    {
-      href: '/assets/static/favicon/favicon.ico?v=0.0.0',
-      rel: 'shortcut icon',
-    },
-  ],
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-    {
-      name: 'description',
-      content:
-        'Calculates the "Muesli index", representing the availability of ingredients required for a yummy muesli. Requests for missing ingredients can be added with one click.',
-    },
-    { name: 'format-detection', content: 'telephone=no' },
-    {
-      content: '/assets/static/favicon/browserconfig.xml?v=0.0.0',
-      name: 'msapplication-config',
-    },
-  ],
-  title: 'Nearbuy Muesli Index',
-})
-useServerHead({ meta: [{ charset: 'utf-8' }] })
+// page
+if (import.meta.server) {
+  useHeadSafe({
+    link: [
+      {
+        href: '/assets/static/favicon/apple-touch-icon.png?v=0.0.0',
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+      },
+      {
+        href: '/assets/static/favicon/favicon-16x16.png?v=0.0.0',
+        rel: 'icon',
+        sizes: '16x16',
+        type: 'image/png',
+      },
+      {
+        href: '/assets/static/favicon/favicon-32x32.png?v=0.0.0',
+        rel: 'icon',
+        sizes: '32x32',
+        type: 'image/png',
+      },
+      {
+        color: '#ee976e',
+        href: '/assets/static/favicon/safari-pinned-tab.svg?v=0.0.0',
+        rel: 'mask-icon',
+      },
+    ],
+    meta: [
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        name: 'description',
+        content:
+          'Calculates the "Muesli index", representing the availability of ingredients required for a yummy muesli. Requests for missing ingredients can be added with one click.',
+      },
+      { name: 'format-detection', content: 'telephone=no' },
+      {
+        content: '/assets/static/favicon/browserconfig.xml?v=0.0.0',
+        name: 'msapplication-config',
+      },
+    ],
+    title: 'Nearbuy Muesli Index',
+  })
+  useHead({ meta: [{ charset: 'utf-8' }] })
+}
+
+// template
+const { t } = useI18n()
+const route = useRoute()
+const user = useUser()
 </script>
 
 <i18n lang="yaml">
