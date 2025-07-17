@@ -2,7 +2,8 @@ import { BetterSqlite3Adapter } from '@lucia-auth/adapter-sqlite'
 import { KeyCloak } from 'arctic'
 import { Lucia } from 'lucia'
 
-import { db, type DatabaseSession, type DatabaseUser } from './db'
+import { db } from './db'
+import type { DatabaseSession, DatabaseUser } from './db'
 
 const adapter = new BetterSqlite3Adapter(db, {
   session: 'session',
