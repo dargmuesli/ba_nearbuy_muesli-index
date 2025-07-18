@@ -12,7 +12,7 @@
     "husky": "9.1.7",
     "lint-staged": "16.1.2",
     "semantic-release": "24.2.7",
-    "vue-tsc": "3.0.2"
+    "vue-tsc": "3.0.3"
   },
   "packageManager": "pnpm@10.13.1",
   "pnpm": {
