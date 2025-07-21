@@ -1,4 +1,6 @@
-export const LOCALES = [
+import type { LocaleObject } from '@nuxtjs/i18n'
+
+export const LOCALES: LocaleObject[] = [
   {
     code: 'de',
     language: 'de',
