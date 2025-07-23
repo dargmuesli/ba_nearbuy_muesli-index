@@ -6,7 +6,7 @@
     "@ninjaneers/nearbuy-web-components": "1.0.1",
     "@ninjaneers/nearbuy-web-components_vue": "1.0.1",
     "@ninjaneers/nearbuy-web-plugins": "2.0.0",
-    "@nuxtjs/i18n": "10.0.1",
+    "@nuxtjs/i18n": "10.0.2",
     "@nuxtjs/seo": "3.1.0",
     "@tailwindcss/vite": "4.1.11",
     "@types/better-sqlite3": "7.6.13",
@@ -24,7 +24,7 @@
     "stylelint-config-standard": "38.0.0",
     "stylelint-no-unsupported-browser-features": "8.0.4",
     "tailwindcss": "4.1.11",
-    "vue": "3.5.17",
+    "vue": "3.5.18",
     "vue-router": "4.5.1"
   },
   "engines": {
