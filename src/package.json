@@ -6,7 +6,7 @@
     "@ninjaneers/nearbuy-web-components": "1.0.1",
     "@ninjaneers/nearbuy-web-components_vue": "1.0.1",
     "@ninjaneers/nearbuy-web-plugins": "2.0.0",
-    "@nuxtjs/i18n": "10.1.1",
+    "@nuxtjs/i18n": "10.1.2",
     "@nuxtjs/seo": "3.2.2",
     "@tailwindcss/vite": "4.1.16",
     "@types/better-sqlite3": "7.6.13",
