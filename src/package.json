@@ -34,6 +34,10 @@
     "plugin.ts"
   ],
   "name": "@dargmuesli/nearbuy-plugin_muesli-index",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dargmuesli/ba_nearbuy_muesli-index.git"
+  },
   "scripts": {
     "build": "pnpm run build:node",
     "build:node": "nuxt build",
