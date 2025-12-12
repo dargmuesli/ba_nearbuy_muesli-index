@@ -7,8 +7,8 @@
     "@ninjaneers/nearbuy-web-components_vue": "1.0.1",
     "@ninjaneers/nearbuy-web-plugins": "2.0.0",
     "@nuxtjs/i18n": "10.2.1",
-    "@nuxtjs/seo": "3.2.2",
-    "@tailwindcss/vite": "4.1.17",
+    "@nuxtjs/seo": "3.3.0",
+    "@tailwindcss/vite": "4.1.18",
     "@types/better-sqlite3": "7.6.13",
     "arctic": "3.7.0",
     "better-sqlite3": "12.5.0",
@@ -23,9 +23,9 @@
     "stylelint-config-recommended-vue": "1.6.1",
     "stylelint-config-standard": "39.0.1",
     "stylelint-no-unsupported-browser-features": "8.0.5",
-    "tailwindcss": "4.1.17",
+    "tailwindcss": "4.1.18",
     "vue": "3.5.25",
-    "vue-router": "4.6.3"
+    "vue-router": "4.6.4"
   },
   "engines": {
     "node": "24"
